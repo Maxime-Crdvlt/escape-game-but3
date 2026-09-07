@@ -4,10 +4,8 @@
 
 ## Equipe (305 - 306)
 
-- Tanim VEER (305)
+### Tanim VEER (305)
   
-<div style="border: 1px solid #d0d7de; border-radius: 6px; padding: 16px; margin-bottom: 16px;">
-
 ### Ethan Mebaley Kahel (Groupe 306)
 
 * **Rôle :** Chef de projet & Référent Tests / Data
@@ -18,8 +16,7 @@
 * **Compétences en renfort :**
   * **Design & Front-end :** Notions de mise en page, intégration front-end et tableaux de bord Power BI (renforcé pendant le stage).
 
-</div>
 
-- Maxime COURDAVAULT (306)
-- Ilan NGUELET (306)
-- Jean-Francois DENA (305)
+### Maxime COURDAVAULT (306)
+### Ilan NGUELET (306)
+### Jean-Francois DENA (305)

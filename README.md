@@ -12,6 +12,21 @@ Projet réalisé dans le cadre du BUT3.
 
 ## Détails de l'équipe
 
+### Jean-François DENA (305)
+- Rôle : Développeur Fullstack
+- Spécialités :
+	- Développement mobile & applicatif : compétence clé du stage (application BEA en C# .NET MAUI, architecture MVVM, fonctionnalités photo annotée et gestion de la mortalité).
+	- Backend & services distribués : web services en Java, communication client/serveur (projet Médiathèque : sockets, multi-threading, synchronisation).
+	- Bases de données : modélisation et exploitation MySQL / PostgreSQL.
+	- Architecture & documentation technique : conception et formalisation de schémas d'architecture (draw.io) pour justifier les choix techniques.
+- Compétences en renfort : //
+- Faiblesses :
+	- Design & identité visuelle : je m'appuie sur des composants existants plutôt que de créer une charte graphique de zéro.
+	- IoT / électronique : aucune expérience sur capteurs et microcontrôleurs.
+- Capacité d'apprentissage :
+	- IoT & microcontrôleurs : prêt à monter en compétence sur la partie physique (contrainte forte de la SAÉ) en m'appuyant sur ma base backend pour faire remonter les données vers l'API.
+	- CI / intégration continue : Git et automatisation des builds, en lien avec la démarche d'amélioration continue demandée.
+
 ### Tanim VEER (305)
 *   **Rôle :** Responsable Matériel (IoT) & Organisation
 *   **Spécialités :** Méthodologie de diagnostic ("Troubleshooting") et manipulation matérielle. Mon bac STI2D m'a donné les bases en capteurs, et mon stage chez Phone Services m'a appris la rigueur du diagnostic. J'y ai compris qu'il faut reperer précisément la panne avant d'agir sur quoi que ce soit. Cette approche analytique sera mon atout pour intégrer et déboguer le matériel de l'Escape Game
@@ -33,15 +48,30 @@ Projet réalisé dans le cadre du BUT3.
 - Capacité d'apprentissage :
 	- Autonome : Porté par la curiosité technique, très à l'aise pour lire des documentations, tester et monter rapidement en compétence sur de nouveaux langages, architectures ou outils d'infrastructure par moi-même.
 
-### Ethan Mebaley Kahel (306)
+### Ethan MEBALEY KAHEL (306)
 * **Rôle :** Référent Tests / Data / Manipulation matérielle
 * **Spécialités :**
   * **Tests (unitaires et manuels) :** Compétence clé consolidée en stage (recette, scénarios de test et validation de code).
   * **Data :** Structuration, traitement et analyse des données.
   * **Hardware, Software & IoT :** Bonne maîtrise acquise en STI2D (cartes Arduino/Raspberry Pi, câblage, capteurs et actionneurs).
   * **Organisation :** Coordination du groupe, suivi des tâches et respect des délais.
-* **Faiblesses :**
-  * **Développement pur / POO :** Moins à l'aise sur le code brut complexe (Java, architecture logicielle lourde).
 * **Compétences en renfort :**
   * **Design & Front-end :** Bases en intégration front et capacité à prêter main-forte à un équipier en cas de difficulté.
+* **Faiblesses :**
+  * **Développement pur / POO :** Moins à l'aise sur le code brut complexe (Java, architecture logicielle lourde).
+* **Capacité d'apprentissage :** //
+
+### Ilan NGUELET (306)
+- Rôle : Référent Recherche & Data
+- Spécialités :
+	- Recherche & synthèse documentaire (rapports stratégiques en stage : audit Google Workspace, veille chatbot)
+	- Data (orientation confirmée pour le BUT3, coloration data)
+	- Communication professionnelle (livrables sobres et structurés, entretiens avec des interlocuteurs pro)
+- Compétences en renfort : //
+- Faiblesses :
+	- Peu/pas d'expérience de dev concret en stage (profil plutôt analyse/rédaction que code)
+	- Backend/Frontend/IoT peu pratiqués récemment
+- Capacité d'apprentissage :
+	- Bonne autonomie de recherche et de montée en compétence rapide sur des sujets techniques (démontré en stage)
+	- Prêt à renforcer le développement (Backend/Frontend) si besoin de couverture d'équipe
  

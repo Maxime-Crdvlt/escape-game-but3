@@ -6,6 +6,19 @@
 
 ### Tanim VEER (305)
 ### Ethan Mebaley Kahel (Groupe 306)
+
+* **Rôle :** Référent Tests / Data / Manipulation matérielle
+* **Spécialités :**
+  * **Tests (unitaires et manuels) :** Compétence clé consolidée en stage (recette, scénarios de test et validation de code).
+  * **Data :** Structuration, traitement et analyse des données.
+  * **Hardware, Software & IoT :** Bonne maîtrise acquise en STI2D (cartes Arduino/Raspberry Pi, câblage, capteurs et actionneurs).
+  * **Organisation :** Coordination du groupe, suivi des tâches et respect des délais.
+* **Faiblesses :**
+  * **Développement pur / POO :** Moins à l'aise sur le code brut complexe (Java, architecture logicielle lourde).
+* **Compétences en renfort :**
+  * **Design & Front-end :** Bases en intégration front et capacité à prêter main-forte à un équipier en cas de difficulté.
+
+
 ### Maxime COURDAVAULT (306)
 ### Ilan NGUELET (306)
 ### Jean-Francois DENA (305)

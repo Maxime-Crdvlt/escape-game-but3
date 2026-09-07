@@ -59,8 +59,8 @@ Projet réalisé dans le cadre du BUT3.
   * **Design & Front-end :** Bases en intégration front et capacité à prêter main-forte à un équipier en cas de difficulté.
 * **Faiblesses :**
   * **Développement pur / POO :** Moins à l'aise sur le code brut complexe (Java, architecture logicielle lourde).
-* **Capacité d'apprentissage :** //
-
+* **Capacité d'apprentissage :**
+     - Grande adaptabilité sur le tas, réactivité pour débloquer un camarade et habitude d'expérimenter par moi-même pour maîtriser vite une nouvelle techno.
 ### Ilan NGUELET (306)
 - Rôle : Référent Recherche & Data
 - Spécialités :

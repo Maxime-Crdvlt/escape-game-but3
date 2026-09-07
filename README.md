@@ -8,7 +8,7 @@
   
 ### Ethan Mebaley Kahel (Groupe 306)
 
-* **Rôle :** Référent Qualité / Data
+* **Rôle :** Référent Tests / Data
 * **Spécialités :**
   * **Tests (unitaires et manuels) :** Compétence clé consolidée en stage (recette, scénarios de test et validation de code).
   * **Data :** Structuration, traitement et analyse des données.

@@ -8,7 +8,7 @@
   
 ### Ethan Mebaley Kahel (Groupe 306)
 
-* **Rôle :** Chef de projet & Référent Tests / Data
+* **Rôle :** Chef de projet & je serais référent Tests / Data
 * **Spécialités :**
   * **Tests (unitaires et manuels) :** Cœur de mon stage (recette, validation du code, scénarios de test).
   * **Data :** Gestion et structuration des données.

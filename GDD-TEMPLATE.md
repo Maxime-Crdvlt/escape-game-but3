@@ -1,11 +1,11 @@
-# 🧩 GDD-TEMPLATE : [Nom du Projet]
+# 🧩 GDD-TEMPLATE : AIR
 **Document de Conception de Jeu (Game Design Document)**
 
 | Information | Détails |
 | :--- | :--- |
-| **Groupe / Équipe** | [Noms des membres] |
-| **Version** | [ex: 1.0 - Draft initial] |
-| **Date de mise à jour** | [JJ/MM/AAAA] |
+| **Groupe / Équipe** | Jean-Francois DENA, Tanim VEER, Maxime COURDAVAULT, Ethan MEBALEY KAHEL, Ilan NGUELET |
+| **Version** | Draft Initial |
+| **Date de mise à jour** | 30/09/2026 |
 
 ---
 

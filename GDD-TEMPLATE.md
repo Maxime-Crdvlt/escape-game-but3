@@ -98,16 +98,37 @@ Décrivez comment les composants communiquent entre eux (ex: Communication via A
 ---
 
 ## 5. PLAN DE PRODUCTION (La Roadmap)
-*Transformez votre vision en tâches concrètes.*
 
 ### 5.1 Liste des Fonctionnalités (Feature List)
-Divisez votre projet en fonctionnalités claires.
-*   **Must-Have (Critique) :** Fonctionnalités indispensables pour le MVP.
-*   **Should-Have (Important) :** Fonctionnalités qui enrichissent l'expérience.
-*   **Nice-to-Have (Bonus) :** Fonctionnalités pour l'exposition JPO si le temps le permet.
+- **Must-Have (Critique) :** Fonctionnalités indispensables pour le MVP.
+  - Epreuve 1 : Possibilité de se connecter (via le post-it) au terminal sans OAUTH
+  - Epreuve 2 : Décryptage des logs sans rechercher la raison
+  - Epreuve 3 : Epreuve 3 complète
+  - Epreuve 4 : Clé USB avec le code pour arrêter LERNA (code incomplet classique à compléter avec des bases en développement)
+
+  - Interface web du terminal avec un parseur de commandes basique (login, show logs, cibler).
+  - Logique de la Jauge de fuite (timer + augmentation en cas d'erreur/aide).
+
+- **Should-Have (Important) :** Fonctionnalités qui enrichissent l'expérience.
+  - Epreuve 1 : Ajout de l'OAUTH
+  - Epreuve 2 : Ajout de la raison de la connexion (trouver pourquoi Adrien s'est connecté avant d'exporter la BDD)
+  - Epreuve 4 : Ajout des feuilles transparentes pour trouver le bout de code manquant
+  - Epreuve 5 : Enrichie le scénario
+ 
+  - Interface Maître du Jeu (Game Master) sur un autre écran pour déclencher des indices à distance et ajuster la jauge si les joueurs bloquent.
+  - Serveur IoT avec retours lumineux (LEDs) et sonores (Buzzer).
+
+- **Nice-to-Have (Bonus) :** Fonctionnalités pour l'exposition JPO si le temps le permet.
+  - Version anglaise
+  - Système renouvelable (codes qui changent, commandes qui changent, etc...)
 
 ### 5.2 Jalons de Validation (Milestones)
-Rappelez les dates clés du projet et ce qui doit être livré à chaque étape.
+| Jalon | Date | Livrable |
+| -- | --| -- |
+| Jalon 1 | 01 Octobre 2026 | GDD |
+| Jalon 2 | mi-novembre 2026 | MVP |
+| Jalon 3 | mi-janvier 2026 | BETA |
+| Jalon 4 | mi-février 2026 | Produit final |
 
 ---
 

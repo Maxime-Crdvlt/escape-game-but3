@@ -108,10 +108,10 @@ C'est le cerveau du jeu. Des scripts PHP très simples reçoivent les commandes 
   -  Le Terminal Joueur : Design épuré façon "console de hacker" (fond noir, texte vert, police d'écriture d'ordinateur rétro). L'écran n'affiche que l'historique des commandes et les retours du système.
   - La Jauge de Fuite : Une grosse barre de progression très visible sur le serveur physique (écran LCD). Elle attire l'œil en changeant de couleur selon l'urgence (Vert au début, puis Orange, puis Rouge clignotant à la fin).
   - Le Dashboard Game Master : Une simple page web cachée (pour l'équipe AIR) avec des boutons basiques pour ajouter/retirer du temps à la jauge ou envoyer un indice texte qui apparaîtra sur le terminal des joueurs.
-  - Le Téléphone (Système OAUTH / A2F) : Le téléphone est connecté au Wi-Fi local. Il affiche une simple page web en plein écran. Quand le joueur tape le mot de passe sur le PC, la page web du téléphone s'actualise toute seule et affiche un faux SMS d'alerte avec le code OAUTH.
+  - Le Téléphone (Système A2F) : Le téléphone est connecté au Wi-Fi local. Il affiche une simple page web en plein écran. Quand le joueur tape le mot de passe sur le PC, la page web du téléphone s'actualise toute seule et affiche un faux SMS d'alerte avec le code A2F.
 - **Interaction Physique :** Comment le joueur interagit-il avec les objets physiques ?
   - Le Clavier d'ordinateur : Outil d'investigation principal. Devoir taper manuellement les commandes (sans souris) donne le sentiment gratifiant d'être un "hacker".
-  - L'Écran tactile du téléphone (OAUTH) : Le joueur doit prendre un vrai smartphone, taper le code PIN sur l'écran tactile et lire le faux SMS pour valider l'étape de double authentification.
+  - L'Écran tactile du téléphone (A2F) : Le joueur doit prendre un vrai smartphone, taper le code PIN sur l'écran tactile et lire le faux SMS pour valider l'étape de double authentification.
   - Le Bouton du faux serveur : Lors de l'épreuve finale, la résolution ne se fait pas au clavier, mais par une action physique brute : frapper un bouton-poussoir d'arrêt d'urgence. Cela coupe l'alarme et procure une satisfaction immédiate.
   - Les objets physiques de bureau : Fouille classique pour trouver des indices (post-it sous le clavier, manuel) et manipulation spatiale (superposer des feuilles calques transparentes à la lumière pour lire le code de la clé USB). 
 
@@ -121,7 +121,7 @@ C'est le cerveau du jeu. Des scripts PHP très simples reçoivent les commandes 
 
 ### 5.1 Liste des Fonctionnalités (Feature List)
 - **Must-Have (Critique) :** Fonctionnalités indispensables pour le MVP.
-  - Epreuve 1 : Possibilité de se connecter (via le post-it) au terminal sans OAUTH
+  - Epreuve 1 : Possibilité de se connecter (via le post-it) au terminal sans A2F
   - Epreuve 2 : Décryptage des logs sans rechercher la raison
   - Epreuve 3 : Epreuve 3 complète
   - Epreuve 4 : Clé USB avec le code pour arrêter LERNA (code incomplet classique à compléter avec des bases en développement)
@@ -131,7 +131,7 @@ C'est le cerveau du jeu. Des scripts PHP très simples reçoivent les commandes 
 
 - **Should-Have (Important) :** Fonctionnalités qui enrichissent l'expérience.
   - Vidéo introductive 
-  - Epreuve 1 : Ajout de l'OAUTH
+  - Epreuve 1 : Ajout de l'A2F
   - Epreuve 2 : Ajout de la raison de la connexion (trouver pourquoi Adrien s'est connecté avant d'exporter la BDD)
   - Epreuve 4 : Ajout des feuilles transparentes pour trouver le bout de code manquant
   - Epreuve 5 : Enrichie le scénario

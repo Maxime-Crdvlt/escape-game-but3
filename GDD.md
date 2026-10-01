@@ -71,7 +71,7 @@ Quelles sont les actions que le joueur peut effectuer ?
 ## 3. SCÉNARIO & THÉMATIQUE (L'Univers)
 
 ### 3.1 L'Intrigue & l'Univers
-L’histoire se passe dans nos temps moderne en France, dans un service de cyberdéfense de la DGSI appelé la Cellule Zéro-Jour. Adrien Kovac, un ingénieur du service, est parti en vacances mais son programme LERNA : qui sert normalement à la DGSI pour de la surveillance de masse a été compromis... Un hacker menace de rendre publique toutes ces données si il n'obtient ce qu'il veut (ransomware). Le Commandant Riad explique la situation aux joueurs dans une vidéo : Ils doivent arrêter LERNA. Les joueurs entreront dans le bureau sombre et confiné d'Adrien Kovac pour résoudre la crise.
+L’histoire se passe dans nos temps moderne en France, dans un service de cyberdéfense de la DGSI appelé la Cellule Zéro-Jour. Adrien Kovac, un ingénieur du service, est parti en vacances mais son programme L.E.R.N.A. (Logiciel d'Exfiltration et de Régulation du Numérique et des Archives) : qui sert normalement à la DGSI pour de la surveillance de masse a été compromis... Un hacker menace de rendre publique toutes ces données si il n'obtient ce qu'il veut (ransomware). Le Commandant Riad explique la situation aux joueurs dans une vidéo : Ils doivent arrêter LERNA. Les joueurs entreront dans le bureau sombre et confiné d'Adrien Kovac pour résoudre la crise.
 
 ### 3.2 Intégration des Enjeux (Éthique / Durable)
 L'enjeu central du jeu est l'hygiène numérique, la protection de la vie privée et l'éthique de la donnée. Cet enjeu est intégré à l'expérience à travers quatre axes :

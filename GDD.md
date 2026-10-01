@@ -5,7 +5,7 @@
 | Information | Détails |
 | :--- | :--- |
 | **Groupe / Équipe** | Tanim VEER, Jean-François DENA, Maxime COURDAVAULT, Ethan MEBALEY KAHEL, Ilan NGUELET |
-| **Version** | 1 - Draft Initial |
+| **Version** | 1.4 |
 | **Date de mise à jour** | 01/10/2026 |
 
 ---
@@ -37,7 +37,7 @@ Les joueurs entrent dans le bureau d'Adrien Kovac, après une vidéo qui expliqu
 
 ### 2.3 Structure & Progression
 *   **Le Flow :** Les 4 ou 5 joueurs jouent en équipe. Le game master arme la partie depuis sa page, puis les joueurs appuient sur le bouton de démarrage du bureau : le chrono et la vidéo 1 se lancent. Deux joueurs s'occupent du poste de travail pendant que les autres fouillent la salle (cadre photo, e-mail imprimé, feuilles transparentes, trois cartes cachées avec les modèles de requêtes), puis tout le monde se retrouve au terminal. Ensuite la progression est linéaire et suit l'histoire, en cinq épreuves. Les temps indiqués sont ceux d'un groupe qui avance sans blocage
-    1.  Accès à la session de Kovac et double authentification (5 min) : la Cellule a verrouillé la session de Kovac par précaution. Le cadre photo posé sur le bureau donne le prénom de son chien ("Mon fidèle Max"). Au terminal, la commande `profil kovac` affiche son faux profil public : on y lit "Max fête ses 7 ans" dans un message de 2025, donc l'année 2018, parmi des pièges (prénom de sa fille, sa ville, un autre anniversaire). L'écran de connexion montre l'empreinte (hash) du mot de passe. Les joueurs lancent `craquer` avec les mots retenus, ce qui retrouve `Max2018`, puis se connectent avec `connexion kovac Max2018`. Un faux SMS arrive sur le téléphone de travail avec un code valable 30 secondes, que les joueurs tapent dans le terminal. Après 3 erreurs, le compte se bloque 30 secondes. Compétence travaillée : sécurité, authentification et recherche d'informations publiques
+    1.  Accès à la session de Kovac et double authentification (5 min) : la Cellule a verrouillé la session de Kovac par précaution. Au départ, le terminal ne connaît que les commandes `aide`, `profil`, `craquer` et `connexion`, et les autres se débloquent au fil des épreuves. Le cadre photo posé sur le bureau donne le prénom de son chien ("Mon fidèle Max"). Au terminal, la commande `profil kovac` affiche son faux profil public : on y lit "Max fête ses 7 ans" dans un message de 2025, donc l'année 2018, parmi des pièges (prénom de sa fille, sa ville, un autre anniversaire). L'écran de connexion montre l'empreinte (hash) du mot de passe. Les joueurs lancent `craquer` avec les mots retenus, ce qui retrouve `Max2018`, puis se connectent avec `connexion kovac Max2018`. Un faux SMS arrive sur le téléphone de travail avec un code valable 30 secondes, que les joueurs tapent dans le terminal. Après 3 erreurs, le compte se bloque 30 secondes. Compétence travaillée : sécurité, authentification et recherche d'informations publiques
     2.  Origine de la fuite (5 min) : le terminal affiche une alerte avec l'heure de la fuite. Les joueurs interrogent la base des logs avec la commande `logs` et des filtres (serveur, heure, volume). Ils lisent aussi un e-mail "RH" imprimé, repèrent l'adresse suspecte de l'expéditeur et l'heure à laquelle Kovac l'a reçu (9h12). En cherchant dans les logs une session inconnue ouverte quelques minutes après, ils trouvent la session compromise et la ciblent avec la commande `cibler`. Le terminal donne alors l'adresse IP du poste infecté. La vidéo 2 reconstitue l'attaque et montre les signes d'un mail piégé. Compétence travaillée : manipulation de données et phishing
     3.  Le message d'HYDRE (5 min) : LERNA chiffre tout ce qu'il archive, y compris le message laissé par le pirate, et range les clés dans une table à côté, ce qui est une mauvaise pratique. Les joueurs ouvrent la base d'archives avec la commande `bd`. Avec des requêtes SQL simplifiées, dont les modèles sont écrits sur les trois cartes cachées, ils retrouvent le message chiffré d'HYDRE (`SELECT * FROM archives WHERE auteur = 'hydre'`), dont l'en-tête indique un chiffre de César et la clé K7. Une seconde requête sur la table `cles` donne la valeur de K7. Ils lisent `man dechiffre` pour connaître les paramètres, puis lancent `dechiffre`. Le message déchiffré est une demande de rançon qui se moque d'eux et donne le port de sortie de la fuite (4 chiffres), qui est le code du cadenas d'une boîte. Compétence travaillée : base de données, chiffrement et gestion des clés
     4.  Le code d'arrêt (5 min) : la boîte contient une clé USB rouge marquée "URGENCE" : Kovac avait préparé un arrêt d'urgence. Elle contient un script de dix lignes qui ne fonctionne pas. Une valeur est manquante (elle se lit en superposant deux feuilles transparentes trouvées dans la poubelle) et une condition est inversée. Les joueurs corrigent le script dans le terminal, guidés par les messages d'erreur et les tests. Quand les tests passent, ils pensent avoir gagné, mais HYDRE active sa porte dérobée et l'alarme se déclenche (LED rouge et buzzer). La vidéo 3 explique comment isoler une machine infectée. Compétence travaillée : développement et tests
@@ -75,14 +75,16 @@ Le sujet central est l'hygiène numérique, la protection de la vie privée et l
 
 ### 4.1 Stack Technologique
 *   **Software :** Frontend Angular et TailwindCSS, backend NestJS (TypeScript), base de données PostgreSQL, broker MQTT Mosquitto, programme de l'ESP32 en C++, tests avec Jest, intégration continue avec GitHub Actions, déploiement avec Docker Compose
-*   **Hardware / IoT :** un ESP32 connecté en Wi-Fi au réseau local, qui communique avec le backend en MQTT
+*   **Hardware / IoT :** un ESP32 connecté en Wi-Fi au réseau local, qui communique avec le backend en MQTT. Il utilise 9 entrées et sorties plus 2 broches I2C, ce qui tient largement sur la carte
     *   Capteurs : quatre interrupteurs à levier et deux gros boutons-poussoirs, un de démarrage et un rouge pour le faux serveur (GPIO)
-    *   Actionneurs : LED rouge et verte, buzzer (GPIO), écran LCD 16x2 (I2C)
-    *   Sans électronique : poste de travail (PC récupéré), ancien téléphone (affiche une page web), boîte fermée par un cadenas à 4 chiffres, clé USB, feuilles transparentes, documents imprimés
-    *   Budget estimé : environ 57 € pour un plafond de 200 € (2 ESP32 dont un de rechange, interrupteurs, deux boutons, LED et buzzer, écran LCD, breadboard, boîte et cadenas, feuilles transparentes, impressions), moins avec la récupération
+    *   Actionneurs : LED rouge et verte, buzzer, écran LCD 16x2 avec module I2C
+    *   Faux serveur : une boîte (bois ou carton épais) qui porte les quatre interrupteurs, le bouton rouge, les LED, le buzzer et l'écran LCD, avec l'ESP32 à l'intérieur
+    *   Machines : un PC portable récupéré (au moins 4 Go de RAM) qui héberge le serveur (backend, PostgreSQL et Mosquitto avec Docker Compose) et affiche le terminal en plein écran, un ancien routeur Wi-Fi pour le réseau local, un ancien téléphone pour le faux SMS, et le téléphone du game master
+    *   Sans électronique : boîte fermée par un cadenas à 4 chiffres, clé USB, feuilles transparentes, documents imprimés
+    *   Budget estimé (prix indicatifs) : 2 ESP32 dont un de rechange (16 €), quatre interrupteurs (4 €), deux boutons (8 €), LED, résistances et buzzer (3 €), écran LCD I2C (6 €), breadboard et fils (6 €), boîte et cadenas (6 €), feuilles transparentes (3 €), impressions (5 €), soit environ 57 € pour un plafond de 200 €, moins avec la récupération
 
 ### 4.2 Architecture du Système
-Tout fonctionne sur un réseau local, sans Internet, pour que le jeu reste stable le jour des JPO. Le backend NestJS contient toute la logique du jeu et suit l'avancement avec une machine à états (une étape par épreuve). Il enregistre l'état de la partie dans PostgreSQL (tables principales : sessions, événements de jeu horodatés, logs fictifs, archives et clés fictives, indices utilisés), donc une panne du backend ne fait pas perdre la partie. Le terminal du poste de travail envoie les commandes des joueurs au backend par une API REST, et reçoit la jauge, le chrono et les vidéos en temps réel par WebSocket. Le téléphone utilise le même WebSocket pour afficher le faux SMS. Le terminal est simulé (système de fichiers virtuel, liste fixe de commandes, deux ou trois modèles de requêtes SQL acceptés), et le script de l'épreuve 4 est vérifié par comparaison avec une solution attendue, sans jamais être exécuté
+Tout fonctionne sur un réseau local, sans Internet, pour que le jeu reste stable le jour des JPO. Le backend NestJS contient toute la logique du jeu et suit l'avancement avec une machine à états (une étape par épreuve). Il enregistre l'état de la partie dans PostgreSQL (tables principales : sessions, événements de jeu horodatés, logs fictifs, archives et clés fictives, indices utilisés), donc une panne du backend ne fait pas perdre la partie. Le terminal du poste de travail envoie les commandes des joueurs au backend par une API REST, et reçoit la jauge, le chrono et les vidéos en temps réel par WebSocket. Le téléphone utilise le même WebSocket pour afficher le faux SMS. Le terminal est simulé (système de fichiers virtuel, liste fixe de commandes débloquées au fil des épreuves, deux ou trois modèles de requêtes SQL acceptés), et le script de l'épreuve 4 est vérifié par comparaison avec une solution attendue, sans jamais être exécuté
 
 L'ESP32 et le backend communiquent en MQTT, en passant par le broker Mosquitto. L'ESP32 publie ce qu'il lit (le bouton de démarrage, la position des interrupteurs, le bouton rouge) et reçoit des ordres (allumer les LED, faire sonner le buzzer, afficher un texte sur l'écran LCD). Par exemple, au démarrage, le bouton envoie un message au backend, qui lance le chrono. Quand les tests de l'épreuve 4 passent, le backend publie un message alarme/ON et l'ESP32 allume les LED rouges et le buzzer. À l'épreuve 5, quand les joueurs ont coupé le bon interrupteur puis appuyé sur le bouton rouge, le backend publie alarme/OFF. La jauge continue jusqu'à la suppression de toutes les copies
 
@@ -107,7 +109,7 @@ L'ESP32 et le backend communiquent en MQTT, en passant par le broker Mosquitto. 
     *   La jauge de fuite et le chrono
     *   La page du game master avec le bouton "nouvelle partie" et le mode secours
     *   Les tests Jest et l'intégration continue, qui valident chaque sprint, avec un simulateur de messages MQTT pour tester sans le matériel
-    *   La documentation de base (README, schéma d'architecture, API décrite avec OpenAPI)
+    *   La documentation de base (README, description de l'architecture, API décrite avec OpenAPI)
 *   **Should-Have (Important) :**
     *   Les épreuves 2 à 5 avec le matériel (cadenas, feuilles transparentes, interrupteurs, boutons, LED, buzzer, écran LCD) et leurs commandes (`logs`, `cibler`, `bd`, `dechiffre`, `reseau`, `doublons`, `purger`)
     *   Le téléphone avec le faux SMS de double authentification
@@ -125,13 +127,13 @@ L'ESP32 et le backend communiquent en MQTT, en passant par le broker Mosquitto. 
 
 ### 5.2 Jalons de Validation (Milestones)
 
-| Jalon | Date | Livrable |
-| :--- | :--- | :--- |
-| Jalon 1 | 01/10/2026 | GDD, puis clarification du besoin avec les référents |
-| Chaque sprint | Toutes les 2 semaines | Démonstration aux référents, tests Jest et intégration continue qui valident le sprint |
-| Jalon 2 | Mi-novembre 2026 | MVP : le bouton de démarrage de bout en bout, l'épreuve 1 jusqu'à la connexion, le terminal, la jauge, le mode secours, les tests et l'intégration continue |
-| Jalon 3 | Mi-janvier 2027 | Version bêta intégrée avec les cinq épreuves et le matériel, au moins trois sessions de test avec des joueurs extérieurs à l'équipe, rapport d'équipe |
-| Jalon 4 | Mi-février 2027 | Produit final, remise en place du jeu en moins de 2 minutes, exposition aux JPO |
+| Jalon | Date | Livrable | Responsables |
+| :--- | :--- | :--- | :--- |
+| Jalon 1 | 01/10/2026 | GDD, puis clarification du besoin avec les référents | Toute l'équipe |
+| Chaque sprint | Toutes les 2 semaines | Démonstration aux référents, tests Jest et intégration continue qui valident le sprint | Toute l'équipe |
+| Jalon 2 | Mi-novembre 2026 | MVP : le bouton de démarrage de bout en bout, l'épreuve 1 jusqu'à la connexion, le terminal, la jauge, le mode secours, les tests et l'intégration continue | Tanim (ESP32, bouton), Jean-François (backend, base), Maxime (terminal, Docker), Ethan (tests), Ilan (textes des vidéos) |
+| Jalon 3 | Mi-janvier 2027 | Version bêta intégrée avec les cinq épreuves et le matériel, au moins trois sessions de test avec des joueurs extérieurs à l'équipe, rapport d'équipe | Tanim (faux serveur, câblage), Jean-François (commandes, base), Maxime (interfaces), Ethan (tests, sessions de test), Ilan (vidéos, EcoIndex) |
+| Jalon 4 | Mi-février 2027 | Produit final, remise en place du jeu en moins de 2 minutes, exposition aux JPO | Toute l'équipe |
 
 ---
 
@@ -140,6 +142,7 @@ L'ESP32 et le backend communiquent en MQTT, en passant par le broker Mosquitto. 
 | Risque identifié | Impact (H/M/L) | Stratégie d'atténuation |
 | :--- | :--- | :--- |
 | Panne ou casse du matériel (IoT) | H | Mode secours : le game master tape une commande secrète qui simule l'action physique. ESP32 de rechange déjà programmé |
+| Panne du PC qui héberge le serveur et le terminal | H | Un deuxième PC récupéré avec la même installation (Docker Compose), prêt à remplacer le premier |
 | Joueurs bloqués sur la syntaxe du terminal | H | Parseur permissif (synonymes, majuscules ignorées), fiche de commandes bien visible, indice automatique après 7 minutes |
 | Retard de développement ou d'intégration | H | Faire d'abord tourner le MVP puis ajouter les épreuves une par une. Le matériel est intégré après le jeu sur ordinateur |
 | Panne de réseau ou de Wi-Fi | H | Tout héberger en local, avec notre propre routeur |

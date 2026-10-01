@@ -36,7 +36,7 @@ Quelles sont les actions que le joueur peut effectuer ?
 - **Systèmes de jeu :** 
   - Un chrono de 30 minutes => représenté par une jauge de fuite qui monte avec le temps et les erreurs
   - Poste de travail : dans lequel les joueurs pourront intéragir
-  - Faux serveur : des retours lumineux et sonores (LED et buzzer)
+  - Faux serveur : des retours lumineux et sonores (LED et buzzer et écran LCD)
   - Ancien téléphone : téléphone de travail d'Adrien Kovac
   - Des indices affichés sur le terminal, envoyés par le game master. Chaque indice fait monter la jauge de 5 % (demandés via un commande)
   - Plusieurs objets dans la pièce (livre cryptographie, post-it, etc...
@@ -86,14 +86,34 @@ L'enjeu central du jeu est l'hygiène numérique, la protection de la vie privé
 
 ### 4.1 Stack Technologique
 *   **Software :** Langages, Frameworks (Frontend/Backend), Base de données.
-*   **Hardware / IoT :** Liste des composants physiques (Microcontrôleurs, capteurs, actionneurs) et mode de connexion.
+HTML5 / CSS3 / JavaScript / PHP / JSON / C / C++
+*   **Hardware / IoT :** Liste des composants physiques (Microcontrôleurs, capteurs, actionneurs)
+Carte ESP32 / LEDs (rouge et verte) / Buzzer piézoélectrique sonore / écran LCD / Bouton-poussoir / Clé USB / Poste de travail / Téléphone
+*  **Connexion :**
+Connexion entre le poste de travail, le téléphone et le faux serveur via le protocole MQTT
 
 ### 4.2 Architecture du Système
-Décrivez comment les composants communiquent entre eux (ex: Communication via API REST, protocole MQTT pour l'IoT, etc.).
+L'architecture repose sur un réseau local (LAN) pour garantir la stabilité le jour des JPO (aucune dépendance à Internet). Le système est conçu pour être simple et robuste :
+- Le Frontend (Poste de travail - HTML/CSS/JS) :
+C'est l'interface visuelle du terminal. Le JavaScript capte ce que le joueur tape au clavier. Pour vérifier si une commande est bonne ou pour actualiser la jauge, le JavaScript utilise la fonction native fetch() pour interroger le PHP de manière transparente (sans recharger la page).
+- Le Backend (Serveur Web - PHP / JSON) :
+C'est le cerveau du jeu. Des scripts PHP très simples reçoivent les commandes du joueur. L'état de la partie (temps restant, erreurs, avancement) est tout simplement stocké et lu dans des petits fichiers JSON. C'est léger, efficace et très facile à débugger.
+- La Communication IoT (Broker MQTT) :
+  - Un serveur MQTT local (ex: Mosquitto) permet au PC et à la carte ESP32 de se parler avec des messages très courts (des "topics").
+  - Du Web vers l'IoT : Quand les joueurs activent le code à l'Épreuve 4, le système publie un message alarme/ON. La carte ESP32 (en C/C++) le lit et allume instantanément les LEDs rouges et le buzzer.
+  - De l'IoT vers le Web : À l'Épreuve 5, quand le joueur appuie sur le gros bouton (Kill Switch), l'ESP32 publie le message alarme/OFF. Le terminal web capte ce message, stoppe la jauge, et affiche l'écran de victoire.
 
 ### 4.3 Interface & Expérience Utilisateur (UI/UX)
-*   **Interface :** Description des écrans principaux et de l'ergonomie.
-*   **Interaction Physique :** Si applicable, comment le joueur interagit-il avec les objets physiques ?
+- **Interface :** Description des écrans principaux et de l'ergonomie.
+  -  Le Terminal Joueur : Design épuré façon "console de hacker" (fond noir, texte vert, police d'écriture d'ordinateur rétro). L'écran n'affiche que l'historique des commandes et les retours du système.
+  - La Jauge de Fuite : Une grosse barre de progression très visible sur le serveur physique (écran LCD). Elle attire l'œil en changeant de couleur selon l'urgence (Vert au début, puis Orange, puis Rouge clignotant à la fin).
+  - Le Dashboard Game Master : Une simple page web cachée (pour l'équipe AIR) avec des boutons basiques pour ajouter/retirer du temps à la jauge ou envoyer un indice texte qui apparaîtra sur le terminal des joueurs.
+  - Le Téléphone (Système OAUTH / A2F) : Le téléphone est connecté au Wi-Fi local. Il affiche une simple page web en plein écran. Quand le joueur tape le mot de passe sur le PC, la page web du téléphone s'actualise toute seule et affiche un faux SMS d'alerte avec le code OAUTH.
+- **Interaction Physique :** Comment le joueur interagit-il avec les objets physiques ?
+  - Le Clavier d'ordinateur : Outil d'investigation principal. Devoir taper manuellement les commandes (sans souris) donne le sentiment gratifiant d'être un "hacker".
+  - L'Écran tactile du téléphone (OAUTH) : Le joueur doit prendre un vrai smartphone, taper le code PIN sur l'écran tactile et lire le faux SMS pour valider l'étape de double authentification.
+  - Le Bouton du faux serveur : Lors de l'épreuve finale, la résolution ne se fait pas au clavier, mais par une action physique brute : frapper un bouton-poussoir d'arrêt d'urgence. Cela coupe l'alarme et procure une satisfaction immédiate.
+  - Les objets physiques de bureau : Fouille classique pour trouver des indices (post-it sous le clavier, manuel) et manipulation spatiale (superposer des feuilles calques transparentes à la lumière pour lire le code de la clé USB). 
 
 ---
 
@@ -110,6 +130,7 @@ Décrivez comment les composants communiquent entre eux (ex: Communication via A
   - Logique de la Jauge de fuite (timer + augmentation en cas d'erreur/aide).
 
 - **Should-Have (Important) :** Fonctionnalités qui enrichissent l'expérience.
+  - Vidéo introductive 
   - Epreuve 1 : Ajout de l'OAUTH
   - Epreuve 2 : Ajout de la raison de la connexion (trouver pourquoi Adrien s'est connecté avant d'exporter la BDD)
   - Epreuve 4 : Ajout des feuilles transparentes pour trouver le bout de code manquant
@@ -121,6 +142,7 @@ Décrivez comment les composants communiquent entre eux (ex: Communication via A
 - **Nice-to-Have (Bonus) :** Fonctionnalités pour l'exposition JPO si le temps le permet.
   - Version anglaise
   - Système renouvelable (codes qui changent, commandes qui changent, etc...)
+  - Vidéo de sensibilisation à la fin
 
 ### 5.2 Jalons de Validation (Milestones)
 | Jalon | Date | Livrable |
@@ -133,8 +155,6 @@ Décrivez comment les composants communiquent entre eux (ex: Communication via A
 ---
 
 ## 6. ANALYSE DES RISQUES
-*Anticipez les problèmes pour ne pas être pris de court.*
-
 | Risque identifié | Impact (H/M/L) | Stratégie d'atténuation |
 | :--- | :--- | :--- |
 | Casse ou défaillance du matériel physique (IoT) | H | Mode "Software-only" de secours : Prévoir une commande secrète (ex: override port404) que le Game Master peut taper pour simuler l'action physique et débloquer les joueurs sans le matériel. |

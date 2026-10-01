@@ -21,7 +21,7 @@
 ## 2. LE GAMEPLAY (Les Règles du Jeu)
 
 ### 2.1 La Boucle de Gameplay (Core Loop)
-Les joueurs se trouveront dans un salle. Ils seront introduis dans le jeu par une vidéo explicative. La partie sera divisée en 5 épreuves, à chaque épreuve des indications seront données sur le terminal pour aider les joueurs. Enfin, les joueurs termineront par une vidéo de fin.
+Les joueurs se trouveront dans un salle. Ils seront introduits dans le jeu par une vidéo explicative. La partie sera divisée en 5 épreuves, à chaque épreuve des indications seront données sur le terminal pour aider les joueurs. Enfin, les joueurs termineront par une vidéo de fin.
 Dans chaque épreuve, les joueurs pourront explorer la salle, trouver des indices et faire des actions sur le terminal pour avancer.
 
 ### 2.2 Mécaniques de Jeu
@@ -45,7 +45,7 @@ Quelles sont les actions que le joueur peut effectuer ?
 - **Le Flow :** Le joueur progresse de manière linéaire, il suit une narration.
 - **Difficulté :** Progressive.
 - **Conditions de Victoire & Défaite :**
-  - Le joueur perd une fois la jauge pleine (fuite des donnnées)
+  - Le joueur perd une fois la jauge pleine (fuite des données)
   - Erreur fatale : dernière épreuve, si le joueur appuie sur le mauvais bouton, la partie est perdue
   - Sinon le joueur gagne
 
@@ -55,7 +55,7 @@ Quelles sont les actions que le joueur peut effectuer ?
   - Contexte / Matériel : Le terminal est verrouillé sur un écran de connexion. Dans la salle (le bureau de Kovac), il y a des objets classiques, un cadre photo d'un chien ("Mon fidèle Max, né en 2018") et un smartphone professionnel éteint.
 - **Epreuve 2 :** Identifier l'origine de la fuite (L'Enquête & Le Phishing)
   - L'objectif : Comprendre comment le virus est entré et cibler la session compromise.
-  - Contexte / Matériel : Le PC affiche une alerte : "Fuite de données détectée à 14:03. Identifiez le point d'entrée." Des documents sont éparpillés sur le bureau, dont une impression d'un e-mail RH.
+  - Contexte / Matériel : Le PC affiche une alerte : "Fuite de es détectée à 14:03. Identifiez le point d'entrée." Des documents sont éparpillés sur le bureau, dont une impression d'un e-mail RH.
 - **Epreuve 3 :** La Base de données (Le Déchiffrement & Le Coffre)
   - L'objectif : Trouver le code du coffre-fort physique pour y récupérer une clé USB d'urgence.
   - Contexte / Matériel : La commande précédente déverrouille une fausse interface de Base de Données. Un coffre-fort à code (4 chiffres) est présent dans la salle. Un "Manuel de Cryptographie basique" (ou une simple note manuscrite) traîne sur une étagère.
@@ -134,7 +134,7 @@ C'est le cerveau du jeu. Des scripts PHP très simples reçoivent les commandes 
   - Epreuve 1 : Ajout de l'A2F
   - Epreuve 2 : Ajout de la raison de la connexion (trouver pourquoi Adrien s'est connecté avant d'exporter la BDD)
   - Epreuve 4 : Ajout des feuilles transparentes pour trouver le bout de code manquant
-  - Epreuve 5 : Enrichie le scénario
+  - Epreuve 5 : Enrichit le scénario
  
   - Interface Maître du Jeu (Game Master) sur un autre écran pour déclencher des indices à distance et ajuster la jauge si les joueurs bloquent.
   - Serveur IoT avec retours lumineux (LEDs) et sonores (Buzzer).

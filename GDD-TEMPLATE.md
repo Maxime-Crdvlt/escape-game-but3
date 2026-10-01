@@ -35,8 +35,11 @@ Quelles sont les actions que le joueur peut effectuer ?
   - Appuyer sur un bouton (faux serveur physique)
 - **Systèmes de jeu :** 
   - Un chrono de 30 minutes => représenté par une jauge de fuite qui monte avec le temps et les erreurs
+  - Poste de travail : dans lequel les joueurs pourront intéragir
+  - Faux serveur : des retours lumineux et sonores (LED et buzzer)
+  - Ancien téléphone : téléphone de travail d'Adrien Kovac
   - Des indices affichés sur le terminal, envoyés par le game master. Chaque indice fait monter la jauge de 5 % (demandés via un commande)
-  - Des retours lumineux et sonores : LED et buzzer (sur un faux serveur)
+  - Plusieurs objets dans la pièce (livre cryptographie, post-it, etc...
 
 ### 2.3 Structure & Progression
 - **Le Flow :** Le joueur progresse de manière linéaire, il suit une narration.
@@ -44,7 +47,24 @@ Quelles sont les actions que le joueur peut effectuer ?
 - **Conditions de Victoire & Défaite :**
   - Le joueur perd une fois la jauge pleine (fuite des donnnées)
   - Erreur fatale : dernière épreuve, si le joueur appuie sur le mauvais bouton, la partie est perdue
-  - Sinon le joueur gagne     
+  - Sinon le joueur gagne
+
+### 2.4 Epreuves
+- **Epreuve 1 :** L'Accès au Terminal & L'A2F (La faille humaine)
+  - L'objectif : Allumer l'écran de contrôle, trouver le mot de passe, puis passer la double authentification.
+  - Contexte / Matériel : Le terminal est verrouillé sur un écran de connexion. Dans la salle (le bureau de Kovac), il y a des objets classiques, un cadre photo d'un chien ("Mon fidèle Max, né en 2018") et un smartphone professionnel éteint.
+- **Epreuve 2 :** Identifier l'origine de la fuite (L'Enquête & Le Phishing)
+  - L'objectif : Comprendre comment le virus est entré et cibler la session compromise.
+  - Contexte / Matériel : Le PC affiche une alerte : "Fuite de données détectée à 14:03. Identifiez le point d'entrée." Des documents sont éparpillés sur le bureau, dont une impression d'un e-mail RH.
+- **Epreuve 3 :** La Base de données (Le Déchiffrement & Le Coffre)
+  - L'objectif : Trouver le code du coffre-fort physique pour y récupérer une clé USB d'urgence.
+  - Contexte / Matériel : La commande précédente déverrouille une fausse interface de Base de Données. Un coffre-fort à code (4 chiffres) est présent dans la salle. Un "Manuel de Cryptographie basique" (ou une simple note manuscrite) traîne sur une étagère.
+- **Epreuve 4 :** Stopper le programme (Code & Puzzle visuel)
+  - L'objectif : Injecter un "kill-code" (code d'arrêt) pour stopper la fuite.
+  - Contexte / Matériel : Le coffre contient une Clé USB rouge marquée "URGENCE". Dans la poubelle de la salle se trouvent des morceaux de papier calque transparent.
+- **Epreuve 5 :** Le Twist Final (Le "Kill Switch" physique)
+  - L'objectif : Créer une apothéose stressante et physique pour terminer la partie.
+  - Contexte / Matériel : Dès que le code de l'épreuve 4 est validé, les joueurs pensent avoir gagné, mais l'alarme se déclenche ! Le faux serveur (ou une boîte électrique factice dans la salle) est relié à plusieurs gros câbles numérotés. Une affiche de prévention sécurité est au mur depuis le début du jeu.
 
 ---
 
@@ -63,7 +83,6 @@ L'enjeu central du jeu est l'hygiène numérique, la protection de la vie privé
 ---
 
 ## 4. SPÉCIFICATIONS TECHNIQUES (L'Ingénierie)
-*Cette section est cruciale pour la validation de votre faisabilité technique.*
 
 ### 4.1 Stack Technologique
 *   **Software :** Langages, Frameworks (Frontend/Backend), Base de données.

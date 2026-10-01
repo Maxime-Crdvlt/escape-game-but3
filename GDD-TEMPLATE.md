@@ -127,8 +127,8 @@ Décrivez comment les composants communiquent entre eux (ex: Communication via A
 | -- | --| -- |
 | Jalon 1 | 01 Octobre 2026 | GDD |
 | Jalon 2 | mi-novembre 2026 | MVP |
-| Jalon 3 | mi-janvier 2026 | BETA |
-| Jalon 4 | mi-février 2026 | Produit final |
+| Jalon 3 | mi-janvier 2027 | BETA |
+| Jalon 4 | mi-février 2027 | Produit final |
 
 ---
 
@@ -137,5 +137,10 @@ Décrivez comment les composants communiquent entre eux (ex: Communication via A
 
 | Risque identifié | Impact (H/M/L) | Stratégie d'atténuation |
 | :--- | :--- | :--- |
-| *ex: Instabilité du hardware* | *H* | *Prévoir un mode "Software-only" de secours.* |
-| *ex: Complexité du scénario* | *M* | *Simplifier les énigmes si le développement prend du retard.* |
+| Casse ou défaillance du matériel physique (IoT) | H | Mode "Software-only" de secours : Prévoir une commande secrète (ex: override port404) que le Game Master peut taper pour simuler l'action physique et débloquer les joueurs sans le matériel. |
+| Blocage sur la syntaxe du terminal | H | Tolérance logicielle et UX : Coder un parseur de commandes permissif (accepter les synonymes et ignorer la casse/les majuscules). Fournir un "Manuel des commandes" très visuel sur le bureau. |
+| Retard de développement ou d'intégration | H | Application stricte du MVP (Must-Have) : Développer et valider l'Escape Game 100% sur ordinateur d'abord (Jalon 2). L'IoT et le matériel physique ne seront intégrés qu'ensuite en bonus (Jalon 3). |
+| Panne de réseau ou de Wi-Fi | H | Faire tourner tout le jeu en local (localhost) sans dépendre d'Internet. |
+| Gestion du temps de jeu défaillante | M | Contrôle via le Game Master (GM) : Le dashboard du GM (Should-Have) permettra d'augmenter ou de baisser manuellement la jauge de fuite, et d'envoyer des indices sur le terminal pour lisser la durée à ~20 min. |
+| Vol, perte ou usure des objets "fouille" | L | Kit de rechange : Prévoir les documents imprimés en triple exemplaire (calques, post-it, mails). Laisser le téléphone branché sur secteur en permanence sur le bureau. |
+

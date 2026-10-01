@@ -1,14 +1,18 @@
-# Escape Game — BUT3
+# Programme L.E.R.N.A. - Equipe AIR
 
-Projet réalisé dans le cadre du BUT3.
+Escape game avec une partie physique et une partie numérique, réalisé dans le cadre de la SAÉ S5.01 (BUT Informatique). Les joueurs sont des stagiaires d'un service de cyberdéfense et ont 30 minutes pour arrêter un programme de surveillance détourné par un pirate
 
-## Equipe (305 - 306)
+Le Game Design Document est dans [GDD.md](GDD.md)
 
-- Jean-Francois DENA (305)
-- Tanim VEER (305)
-- Maxime COURDAVAULT (306)
-- Ethan MEBALEY KAHEL (Groupe 306)
-- Ilan NGUELET (306)
+## Équipe (305 - 306)
+
+| Membre | Groupe | Rôle dans le projet |
+| :--- | :--- | :--- |
+| Tanim VEER | 305 | Programme de l'ESP32, câblage, récupération du matériel, organisation |
+| Jean-François DENA | 305 | Backend NestJS, logique du jeu, API, MQTT, base de données |
+| Maxime COURDAVAULT | 306 | Frontend Angular, Docker, intégration continue |
+| Ethan MEBALEY KAHEL | 306 | Tests, vérification du matériel, sessions de test |
+| Ilan NGUELET | 306 | Besoin et contenu des vidéos, éthique et durable, suivi EcoIndex |
 
 ## Détails de l'équipe
 

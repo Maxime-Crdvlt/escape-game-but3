@@ -17,7 +17,7 @@ Cette première semaine m'a surtout servi à préparer le terrain. J'ai install�
 | Cadrage / Équipe | Structuration de la première étape de développement et répartition des tâches avec l'équipe | 1 | Terminé |
 
  Difficultés et Solutions
-- Problème : J'ai été rechercher des composants électroniques dans la déchetterie et la recyclerie de ma ville, mais pour la déchetterie il n'en avait aucun et pour la déchetterie il était en trop mauvais état et pour les neufs, impossible de les obtenir, c'était tout simplement interdit
+- Problème : J'ai été rechercher des composants électroniques dans la déchetterie et la recyclerie de ma ville, mais pour la recyclerie il n'en avait aucun et pour la déchetterie il était en  impossible de les obtenir, c'était tout simplement interdit
 - Solution : La comparaison des prix de certains composants neufs et d'occasions, on privilégie l'occasion pour le côté développement durable du projet
     
  Objectifs S+1

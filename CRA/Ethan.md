@@ -6,6 +6,7 @@
 
 ## Semaine 1 (du 05/10 au 11/10/2026)
 
+temps total : 4h
 
 Cette première semaine m'a surtout servi à préparer le terrain. J'ai installé tous les logiciels et outils dont on aura besoin pour coder et faire communiquer la partie électronique avec le site (PlatformIO, MQTT). En parallèle, j'ai regardé la liste des composants demandée par le prof pour comparer les prix et voir si on pouvait en récupérer gratuitement. Enfin, on s'est posé avec le groupe pour organiser le projet, bien répartir le rôle de chacun et planifier le début du code pour la semaine 2.
 

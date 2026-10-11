@@ -14,9 +14,9 @@ Cette semaine, j'ai regardé la liste du matériel que le professeur nous prête
 
 | Catégorie | Description de la tâche | Temps (h) | Statut |
 | :--- | :--- | :--- | :--- |
-| Matériel | Lecture de la liste du matériel prêté et repérage de ce qui manque | __ | Terminé |
-| Matériel | Rédaction et envoi du mail de demande de matériel au professeur | __ | Terminé |
-| Organisation | Mis en place d'une liste des objets à récupérer et à acheter (décor, cadenas, boutons, interrupteurs) | __ | Terminé |
+| Matériel | Lecture de la liste du matériel prêté et repérage de ce qui manque | 20min | Terminé |
+| Matériel | Rédaction et envoi du mail de demande de matériel au professeur | 10min | Terminé |
+| Organisation | Mis en place d'une liste des objets à récupérer et à acheter (décor, cadenas, boutons, interrupteurs) | 1h | Terminé |
 
 ### Difficultés et solutions
 **Problème :** la liste prêtée ne contient pas de buzzer (petit haut-parleur qui sonne), d'interrupteurs ni de gros bouton, et on ne sait pas encore s'il y a assez de prises sur la carte d'extension pour tout brancher

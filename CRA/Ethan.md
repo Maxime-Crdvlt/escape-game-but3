@@ -1,6 +1,10 @@
-Semaine 1 (du 05/10 au 11/10/2026)
-Focus de la semaine : Configuration des environnements de développement, sourcing des composants et cadrage du projet
-Temps total travaillé : 4h
+# Compte Rendu d'Activité (CRA) - Maxime
+
+**Rôle principal :** 
+
+---
+
+## Semaine 1 (du 05/10 au 11/10/2026)
 
 📝 Synthèse
 Cette première semaine a été consacrée à la mise en place technique et logistique du projet. J'ai installé l'ensemble des environnements de développement et outils logiciels nécessaires pour assurer la future liaison hardware/software (PlatformIO, broker/outils MQTT). En parallèle, j'ai analysé la liste des composants matériels demandée pour comparer les coûts et tenté de trouver des composants de récupération. Enfin, nous avons posé les bases de la structure du projet avec l'équipe pour planifier les développements de la Semaine 2 et répartir précisément les rôles.

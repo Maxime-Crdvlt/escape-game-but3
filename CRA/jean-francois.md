@@ -33,3 +33,35 @@ Je retiens que PlatformIO gère les bibliothèques de la carte comme un gestionn
 - Initialiser le projet backend dans le dépôt GitHub et lancer un premier serveur.
 - Installer Mosquitto et MQTTX, puis réaliser un premier échange de messages entre un script de test et le backend.
 - Définir avec Tanim les noms et le contenu des topics MQTT (badge, interrupteurs, bouton, alarme).
+
+## Semaine 2 (du 12/10 au 18/10/2026)
+
+**Focus de la semaine :** Réunions d'équipe, mise en place du broker MQTT et initialisation du backend
+**Temps total travaillé :** 4h
+
+### Synthèse
+
+Cette semaine, nous avons récupéré le matériel IoT le jeudi 15 octobre et tenu deux réunions d'équipe en soirée, le mardi et le vendredi, pour avancer ensemble sur le projet. De mon côté, j'ai installé et configuré Mosquitto sur mon PC Windows et validé le circuit de messages avec MQTTX (abonnement à `lerna/#`, publication sur `lerna/test`, message reçu). J'ai relevé l'IP locale du PC et transmis à Tanim les informations de connexion au broker (IP, port 1883) pour que sa carte puisse s'y connecter. Côté code, j'ai initialisé le projet NestJS dans le dépôt (branche `backend-init`) et vérifié que le serveur démarre. J'ai aussi posé à l'équipe la question de la stack (NestJS + PostgreSQL + Mosquitto, ou PHP/JSON comme dans le GDD v1.4) ; en attendant la décision, j'ai avancé avec NestJS.
+
+### Détail des activités
+
+| Catégorie | Description de la tâche / Lien ticket | Temps (h) | Statut |
+| :--- | :--- | :--- | :--- |
+| Organisation | Réunions d'équipe en soirée (mardi et vendredi) pour structurer le travail | 2.0 | Terminé |
+| Logistique / IoT | Récupération du matériel prêté (jeudi 15/10) | 0.25 | Terminé |
+| Environnement | Installation de Mosquitto 2.1.2, configuration du listener (port 1883) et règle de pare-feu (réseau privé) | 0.5 | Terminé |
+| Test IoT | Installation de MQTTX, connexion au broker local, test publication/abonnement sur `lerna/test` | 0.5 | Terminé |
+| Backend | Installation de Node/NestJS, clonage du dépôt, création du projet, test (Hello World), commit et push de `backend-init` | 0.5 | Terminé |
+| Cadrage / Équipe | Question sur le choix de la stack posée à l'équipe, et message à Tanim avec l'IP et le port du broker | 0.25 | En cours |
+
+### Difficultés et solutions
+
+**Problème :** Au début, MQTTX pointait vers un broker public (`broker.emqx.io`) au lieu de mon broker local, et le pare-feu Windows bloquait Mosquitto après un refus d'autorisation.
+**Solution :** J'ai recréé la connexion avec `localhost`, supprimé les règles de blocage et ajouté une règle autorisant le port 1883 sur le réseau privé.
+
+### Objectifs S+1 (Semaine 3)
+
+- Faire valider la stack par l'équipe et la consigner dans le dépôt.
+- Connecter NestJS à Mosquitto (abonnement à `lerna/#`, affichage des messages reçus).
+- Définir avec Tanim les topics MQTT et leur format dans `docs/mqtt-topics.md`.
+- Mardi 20/10 à l'IUT : brancher la carte et la faire communiquer avec le broker (IP à mettre à jour sur le réseau de l'IUT).

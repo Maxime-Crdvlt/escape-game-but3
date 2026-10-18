@@ -27,3 +27,29 @@ Cette semaine, j'ai regardé la liste du matériel que le professeur nous prête
 - Installer PlatformIO pour programmer et tester la carte
 - Faire un premier essai : un appui sur un bouton envoie un message au serveur
 - Se répartir les tâches avec l'équipe pour la première version du jeu
+
+
+## Semaine 2 (du 12/10 au 18/10/2026)
+
+**Focus de la semaine :** Récupération et prise en main du matériel
+**Temps total travaillé :** 1h15
+
+### Synthèse
+Jeudi 15/10, j'ai récupéré le matériel qu'on nous prête. J'ai ensuite commencé à le prendre en main : j'ai regardé les cartes, les capteurs et les écrans et j'ai commencé à voir comment les brancher entre eux et je n'ai pas encore programmé la carte
+
+### Détail des activités
+
+| Catégorie | Description de la tâche | Temps (h) | Statut |
+| :--- | :--- | :--- | :--- |
+| Matériel | Récupération du matériel prêté par le professeur (jeudi 15/10) | 15min | Terminé |
+| Matériel | Prise en main du matériel : identification des composants et premiers branchements | 1h | En cours |
+
+### Difficultés et solutions
+**Problème :** le matériel n'a été récupéré que jeudi, donc il restait peu de temps pour avancer cette semaine
+**Solution :** j'ai fait seulement la prise en main et je commence la programmation la semaine prochaine
+
+### Objectifs S+1
+- Installer PlatformIO (le logiciel conseillé par le professeur pour programmer la carte) et tester la carte
+- Faire un premier essai : un appui sur un bouton envoie un message au serveur
+- Brancher les LED et l'écran du faux serveur
+- Se répartir les tâches avec l'équipe pour la première version du jeu

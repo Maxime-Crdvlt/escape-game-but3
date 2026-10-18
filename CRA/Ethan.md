@@ -25,3 +25,28 @@ Cette première semaine m'a surtout servi à préparer le terrain. J'ai install�
 - Démarrer le développement collaboratif de la première étape (structure de base du code et du terminal).
 - Mettre en œuvre la répartition des tâches validée au sein du groupe pour lancer les premiers scripts.
 - Commencer à coder le terminal web : créer l'interface visuelle (HTML/CSS) et mettre en place l'invite de commande de l'Épreuve 1.
+
+
+## Semaine 2 (du 12/10 au 18/10/2026)
+
+Temps total travaillé : 6h
+
+Synthese
+Cette semaine, on a reçu le matériel le jeudi 15 octobre. On a tout donné à Tanim pour qu'il garde les composants et qu'on puisse commencer les tests. En plus de ça, on s'est fait deux réunions en équipe le soir, le mardi et le vendredi, pour bien travailler ensemble et avancer sur le projet. De mon côté, j'ai commencé à coder le terminal web pour l'Épreuve 1 (l'interface visuelle et la connexion). Pour la double authentification (A2F), je ne l'ai pas encore codée : j'ai commencé à me renseigner sur comment faire et j'ai cherché un ancien téléphone de récupération pour le projet. La semaine prochaine (mardi 20 octobre), on ramène tous les composants à l'IUT pour tout brancher ensemble et lier notre code aux cartes.
+
+Detail des activites
+| Categorie | Description de la tache / Lien ticket | Temps (h) | Statut |
+| :--- | :--- | :--- | :--- |
+| Organisation | Réunions d'équipe en soirée (mardi et vendredi) pour structurer le travail | 2.0 | Terminé |
+| Logistique / IoT | Réception des composants, vérification et remise du matériel à Tanim | 1.0 | Terminé |
+| Développement Web | Création des fichiers du terminal (HTML/CSS/JS) et du design pour l'Épreuve 1 | 2.0 | En cours |
+| Recherche A2F | Documentation sur le fonctionnement de l'A2F et recherche d'un téléphone de récup | 1.0 | En cours |
+
+Difficultes et Solutions
+- Probleme : Trouver un smartphone de récupération fonctionnel pour servir de support à l'affichage du code A2F.
+- Solution : Demander autour de nous dans le groupe et auprès de proches pour récupérer un vieux téléphone inutilisé.
+
+Objectifs S+1 (Semaine 3)
+- Apporter tout le matériel à l'IUT le mardi 20/10 pour faire les premiers branchements en groupe.
+- Tester le code sur les cartes électroniques (ESP32/Arduino).
+- Avancer sur l'A2F et connecter le téléphone au reste du système.

@@ -31,7 +31,7 @@ Cette première semaine m'a surtout servi à préparer le terrain. J'ai install�
 
 Temps total travaillé : 6h
 
-Synthese
+
 Cette semaine, on a reçu le matériel le jeudi 15 octobre. On a tout donné à Tanim pour qu'il garde les composants et qu'on puisse commencer les tests. En plus de ça, on s'est fait deux réunions en équipe le soir, le mardi et le vendredi, pour bien travailler ensemble et avancer sur le projet. De mon côté, j'ai commencé à coder le terminal web pour l'Épreuve 1 (l'interface visuelle et la connexion). Pour la double authentification (A2F), je ne l'ai pas encore codée : j'ai commencé à me renseigner sur comment faire et j'ai cherché un ancien téléphone de récupération pour le projet. La semaine prochaine (mardi 20 octobre), on ramène tous les composants à l'IUT pour tout brancher ensemble et lier notre code aux cartes.
 
 Detail des activites

@@ -4,6 +4,33 @@
 
 ---
 
+## Semaine 2 (du 12/10 au 18/10/2026)
+
+**Focus de la semaine :** Expérimentations et premiers tests  
+**Temps total travaillé :** 4h
+
+### 📝 Synthèse
+
+J'ai d'abord expérimenté un petit peu avec PlatformIO et le protocole MQTT. J'ai ensuite commencé à développer le terminal.
+
+### ⚙️ Détail des activités
+
+| Catégorie         | Description de la tâche / Lien ticket              | Temps (h) | Statut      |
+| ----------------- | -------------------------------------------------- | --------- | ----------- |
+| **Documentation** | Expérimentation de PlatformIO et le protocole MQTT | 2         | Terminé     |
+| **Documentation** | Début du terminal                                  | 2         | En cours... |
+
+### ⚠️ Difficultés et Solutions
+
+- **Problème :**
+- **Solution :**
+
+### 🎯 Objectifs S+1
+
+L'objectif de la semaine prochaine est d'avoir le MVP d'une épreuve entière.
+
+---
+
 ## Semaine 1 (du 05/10 au 11/10/2026)
 
 **Focus de la semaine :** Mise en place de l'environnement de développement et documentation  
@@ -16,7 +43,7 @@ J'ai d'abord suivie la masterclasse de Mardi après-midi qui m'a permis de déco
 ### ⚙️ Détail des activités
 
 | Catégorie         | Description de la tâche / Lien ticket             | Temps (h) | Statut  |
-| :---------------- | :------------------------------------------------ | :-------- | :------ |
+| ----------------- | ------------------------------------------------- | --------- | ------- |
 | **Documentation** | Découverte de PlatformIO et le protocole MQTT     | 2         | Terminé |
 | **Documentation** | Mise en place de l'environnement de développement | 1         | Terminé |
 

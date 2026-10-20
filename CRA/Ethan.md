@@ -48,5 +48,5 @@ Difficultes et Solutions
 
 Objectifs S+1 (Semaine 3)
 - Apporter tout le matériel à l'IUT le mardi 20/10 pour faire les premiers branchements en groupe.
-- Tester le code sur les cartes électroniques (ESP32/Arduino).
+- Tester le code sur les cartes électroniques (Raspberry Pi 3/Arduino).
 - Avancer sur l'A2F et connecter le téléphone au reste du système.

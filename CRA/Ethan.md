@@ -54,7 +54,7 @@ Focus de la semaine : Avancée du terminal HTML, mise en place du MQTT, Platform
 Temps total travaillé : 6h
 
 Synthese
-Cette semaine, j'ai bien avancé sur le code du terminal au format HTML. J'ai aussi pris en charge les composants chez moi, ce qui m'a permis de faire un test concret : j'ai réussi à faire réagir une LED en fonction d'une commande passée dans le terminal (pour la dernière épreuve). Pour y arriver, j'ai installé le broker MQTT et PlatformIO sur VS Code, et j'ai réussi à faire la liaison entre tout ça. Enfin, on a calé avec mes camarades les sessions de travail en présentiel pour la semaine du 26 au 31 octobre afin d'enchaîner sur les différentes épreuves ensemble.
+Cette semaine, j'ai bien avancé sur le code du terminal au format HTML. J'ai aussi pris en charge les composants chez moi cet semaine , ce qui m'a permis de faire un test concret : j'ai réussi à faire réagir une LED en fonction d'une commande passée dans le terminal (pour la dernière épreuve). Pour y arriver, j'ai installé le broker MQTT et PlatformIO sur VS Code, et j'ai réussi à faire la liaison entre tout ça. Enfin, on a calé avec mes camarades les sessions de travail en présentiel pour la semaine du 26 au 31 octobre afin d'enchaîner sur les différentes épreuves ensemble. j’ai repassé les composant à tanim pour qu’il continu ses test de son coter la semaine qui suit 
 
 Detail des activites
 | Categorie | Description de la tache / Lien ticket | Temps (h) | Statut |

@@ -48,5 +48,28 @@ Difficultes et Solutions
 
 Objectifs S+1 (Semaine 3)
 - Apporter tout le matériel à l'IUT le mardi 20/10 pour faire les premiers branchements en groupe.
+
+Semaine 3 (du 19/10 au 25/10/2026)
+Focus de la semaine : Avancée du terminal HTML, mise en place du MQTT, PlatformIO et test de la LED sur commande
+Temps total travaillé : 6h
+
+Synthese
+Cette semaine, j'ai bien avancé sur le code du terminal au format HTML. J'ai aussi pris en charge les composants chez moi, ce qui m'a permis de faire un test concret : j'ai réussi à faire réagir une LED en fonction d'une commande passée dans le terminal (pour la dernière épreuve). Pour y arriver, j'ai installé le broker MQTT et PlatformIO sur VS Code, et j'ai réussi à faire la liaison entre tout ça. Enfin, on a calé avec mes camarades les sessions de travail en présentiel pour la semaine du 26 au 31 octobre afin d'enchaîner sur les différentes épreuves ensemble.
+
+Detail des activites
+| Categorie | Description de la tache / Lien ticket | Temps (h) | Statut |
+| :--- | :--- | :--- | :--- |
+| Developpement Web | Avancée importante sur le code du terminal HTML et la structure générale | 2.5 | En cours |
+| Environnement & IoT | Installation de PlatformIO, du broker MQTT et mise en place de la liaison logicielle | 1.5 | Terminé |
+| Tests Materiels | Récupération des composants chez moi et test d'une LED commandée depuis le terminal | 2.0 | Terminé |
+
+Difficultes et Solutions
+- Probleme : La liaison entre les différents outils et faire fonctionner la LED sur commande a été assez énervante à configurer.
+- Solution : Documentation, tests pas à pas sur PlatformIO et vérification de la configuration du broker MQTT local pour stabiliser la communication.
+
+Objectifs S+1 (Semaine 4 / du 26 au 31/10/2026)
+- Se retrouver en présentiel avec l'équipe pour avancer ensemble sur les épreuves du projet.
+- Continuer le développement des différentes étapes du jeu sur le terminal.
+- Pousser les tests de liaison entre le code et les composants matériels.
 - Tester le code sur les cartes électroniques (Raspberry Pi 3/Arduino).
 - Avancer sur l'A2F et connecter le téléphone au reste du système.

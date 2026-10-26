@@ -49,7 +49,7 @@ Difficultes et Solutions
 Objectifs S+1 (Semaine 3)
 - Apporter tout le matériel à l'IUT le mardi 20/10 pour faire les premiers branchements en groupe.
 
-Semaine 3 (du 19/10 au 25/10/2026)
+## Semaine 3 (du 19/10 au 25/10/2026)
 Focus de la semaine : Avancée du terminal HTML, mise en place du MQTT, PlatformIO et test de la LED sur commande
 Temps total travaillé : 6h
 

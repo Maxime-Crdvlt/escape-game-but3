@@ -59,4 +59,33 @@ Cette semaine, toute l'équipe est allée récupérer le matériel IoT le jeudi 
 - Participer à la séance du mardi 20/10 pour brancher les équipements avec l'équipe.
 - Continuer à avancer sur le code avec le groupe.
 
+
+## Semaine 3 (du 19/10 au 25/10/2026)
+
+**Focus de la semaine :** Test du matériel en équipe, planification des prochaines séances et poursuite de ma documentation  
+**Temps total travaillé :** 3h
+
+### Synthèse
+
+Cette semaine, l'équipe s'est retrouvée lors d'une séance de SAÉ pour tester ensemble le matériel physique. Ethan a ensuite gardé le matériel chez lui pour tester le code, et il nous a directement montré ce qu'il avait réalisé. Nous avons aussi planifié les séances de travail de la semaine du 26 au 31 octobre. De mon côté, j'ai continué ma documentation sur les différents éléments du projet, notamment pour comprendre ce qu'est une carte Arduino et comment elle fonctionne.
+
+### Détail des activités
+
+| Catégorie | Description de la tâche / Lien ticket | Temps | Statut |
+| :--- | :--- | :--- | :--- |
+| Tests matériels | Séance de SAÉ en équipe : test du matériel physique et démonstration d'Ethan sur son avancement | 1h30 | Terminé |
+| Organisation | Planification des séances de travail du 26 au 31/10 avec l'équipe | 30 min | Terminé |
+| Documentation | Poursuite de ma documentation sur les éléments du projet (Arduino, etc.) | 1h | En cours |
+
+### Difficultés et solutions
+
+- **Problème :** Nous n'avons qu'un seul exemplaire du matériel, qui doit circuler entre nous. Je n'ai donc pu le tester qu'au cours de la séance en équipe.
+- **Solution :** Nous avons testé le matériel ensemble pendant la séance de SAÉ, puis planifié des séances en présentiel pour la semaine du 26 au 31/10 afin que chacun puisse l'utiliser.
+
+### Objectifs S+1
+
+- Participer aux séances en présentiel prévues du 26 au 31/10 pour avancer avec l'équipe sur les épreuves.
+- Contribuer aux tests de liaison entre le code et le matériel.
+- Continuer ma documentation sur les équipements.
+
 ---

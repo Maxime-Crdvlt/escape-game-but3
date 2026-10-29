@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Téléphone d'Adrien Kovac</title>
+<style>
+  * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html, body { margin:0; height:100%; background:#000; color:#fff; font-family:system-ui, "Segoe UI", sans-serif; overflow:hidden; user-select:none; }
+  #phone { max-width:430px; height:100%; margin:0 auto; position:relative; background:linear-gradient(160deg,#1a2a6c,#b21f1f 55%,#fdbb2d); overflow:hidden; }
+  .screen { position:absolute; inset:0; display:none; flex-direction:column; align-items:center; padding:48px 24px 24px; }
+  .screen.on { display:flex; }
+  .status { position:absolute; top:10px; left:20px; right:20px; display:flex; justify-content:space-between; font-size:13px; font-weight:600; }
+  #horloge { font-size:72px; font-weight:200; margin-top:20px; letter-spacing:-2px; }
+  #date { opacity:.85; margin-bottom:28px; }
+  #pin-titre { margin:6px 0 18px; font-size:15px; min-height:1.3em; text-align:center; }
+  .points { display:flex; gap:16px; margin-bottom:26px; }
+  .points i { width:14px; height:14px; border-radius:50%; border:2px solid #fff; display:block; }
+  .points i.plein { background:#fff; }
+  .points.erreur { animation:secoue .4s; }
+  @keyframes secoue { 25% { transform:translateX(-10px); } 75% { transform:translateX(10px); } }
+  .clavier { display:grid; grid-template-columns:repeat(3, 78px); gap:16px; }
+  .clavier button { width:78px; height:78px; border-radius:50%; border:none; background:rgba(255,255,255,.22); color:#fff; font-size:30px; font-weight:300; backdrop-filter:blur(8px); }
+  .clavier button:active { background:rgba(255,255,255,.5); }
+  .clavier .vide { visibility:hidden; }
+  .clavier small { display:block; font-size:9px; letter-spacing:2px; margin-top:-4px; opacity:.8; }
+  .appli { width:100%; background:rgba(255,255,255,.95); color:#111; border-radius:20px; padding:18px; margin-bottom:16px; }
+  .appli h2 { margin:0 0 4px; font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:#555; }
+  .appli .sous { font-size:13px; color:#555; }
+  #code { font-size:46px; font-weight:700; letter-spacing:6px; font-variant-numeric:tabular-nums; margin:10px 0 6px; color:#1a2a6c; }
+  .barre { height:6px; background:#ddd; border-radius:3px; overflow:hidden; }
+  .barre div { height:100%; background:#1a2a6c; width:100%; transition:width 1s linear, background-color .3s; }
+  .sms { padding:10px 0; border-top:1px solid #e4e4e4; font-size:14px; }
+  .sms:first-of-type { border-top:none; }
+  .sms b { display:block; font-size:13px; }
+  .sms span { color:#888; font-size:12px; float:right; }
+  #accueil { overflow-y:auto; justify-content:flex-start; padding-top:56px; }
+  #verrou { position:absolute; bottom:14px; font-size:12px; opacity:.8; }
+</style>
+</head>
+<body>
+<div id="phone">
+  <div class="status"><span id="op">DGSI-Mobile</span><span>5G ▂▄▆█ 🔋 62 %</span></div>
+
+  <section class="screen on" id="ecran-verrou">
+    <div id="horloge">--:--</div>
+    <div id="date"></div>
+    <div id="pin-titre">Saisissez le code PIN</div>
+    <div class="points" id="points"><i></i><i></i><i></i><i></i></div>
+    <div class="clavier" id="clavier"></div>
+  </section>
+
+  <section class="screen" id="accueil">
+    <div class="appli">
+      <h2>Authentificateur DGSI</h2>
+      <div class="sous">Code de connexion · poste de travail A. Kovac</div>
+      <div id="code">--- ---</div>
+      <div class="barre"><div id="barre"></div></div>
+      <div class="sous" style="margin-top:6px">Expire dans <b id="reste">--</b> s</div>
+    </div>
+    <div class="appli">
+      <h2>Messages</h2>
+      <div id="sms"></div>
+    </div>
+    <div id="verrou" onclick="verrouiller()">Verrouiller</div>
+  </section>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+let pin = '', pinValide = '', code = '', expire = 0, bloqueJusqua = 0;
+
+/* --- Horloge --- */
+function horloge() {
+  const d = new Date();
+  $('horloge').textContent = d.toLocaleTimeString('fr-FR', { hour:'2-digit', minute:'2-digit' });
+  $('date').textContent = d.toLocaleDateString('fr-FR', { weekday:'long', day:'numeric', month:'long' });
+}
+horloge(); setInterval(horloge, 5000);
+
+/* --- Clavier --- */
+const lettres = { 2:'ABC', 3:'DEF', 4:'GHI', 5:'JKL', 6:'MNO', 7:'PQRS', 8:'TUV', 9:'WXYZ' };
+for (const t of ['1','2','3','4','5','6','7','8','9','','0','⌫']) {
+  const b = document.createElement('button');
+  if (t === '') b.className = 'vide';
+  else b.innerHTML = t + (lettres[t] ? '<small>' + lettres[t] + '</small>' : '');
+  b.onclick = () => touche(t);
+  $('clavier').appendChild(b);
+}
+
+function dessinerPoints(erreur) {
+  [...$('points').children].forEach((p, i) => p.className = i < pin.length ? 'plein' : '');
+  if (erreur) { $('points').classList.add('erreur'); setTimeout(() => $('points').classList.remove('erreur'), 400); }
+}
+
+async function touche(t) {
+  if (Date.now() < bloqueJusqua) return;
+  if (t === '⌫') pin = pin.slice(0, -1);
+  else if (t !== '' && pin.length < 4) pin += t;
+  dessinerPoints();
+  if (pin.length === 4) await essayer(pin);
+}
+
+async function appeler(p) {
+  const r = await fetch('telephone.php', { method:'POST', headers:{ 'Content-Type':'application/json' }, body: JSON.stringify({ pin: p }) });
+  return r.json();
+}
+
+async function essayer(p) {
+  let d;
+  try { d = await appeler(p); } catch (e) { $('pin-titre').textContent = 'Réseau indisponible'; pin = ''; dessinerPoints(); return; }
+  if (d.ok) { pinValide = p; pin = ''; dessinerPoints(); afficherAccueil(d); return; }
+  pin = ''; dessinerPoints(true);
+  if (d.bloque) {
+    bloqueJusqua = Date.now() + d.bloque * 1000;
+    const tick = () => {
+      const s = Math.ceil((bloqueJusqua - Date.now()) / 1000);
+      if (s <= 0) { $('pin-titre').textContent = 'Saisissez le code PIN'; return; }
+      $('pin-titre').textContent = 'Trop d\'essais. Réessayez dans ' + s + ' s'; setTimeout(tick, 500);
+    };
+    tick();
+  } else {
+    $('pin-titre').textContent = 'Code incorrect (' + d.essais_restants + ' essai' + (d.essais_restants > 1 ? 's' : '') + ' avant blocage)';
+  }
+}
+
+/* --- Accueil : code 2FA et SMS --- */
+function afficherAccueil(d) {
+  $('ecran-verrou').classList.remove('on'); $('accueil').classList.add('on');
+  $('sms').innerHTML = '';
+  for (const s of d.sms) {
+    const el = document.createElement('div'); el.className = 'sms';
+    const b = document.createElement('b'); b.textContent = s.de;
+    const h = document.createElement('span'); h.textContent = s.heure;
+    el.append(h, b, document.createTextNode(s.texte)); $('sms').appendChild(el);
+  }
+  majCode(d);
+}
+
+function majCode(d) {
+  code = d.code; expire = Date.now() + d.expire * 1000;
+  $('code').textContent = code.slice(0, 3) + ' ' + code.slice(3);
+}
+
+setInterval(async () => {
+  if (!pinValide) return;
+  const reste = Math.max(0, Math.ceil((expire - Date.now()) / 1000));
+  $('reste').textContent = reste;
+  $('barre').style.width = (reste / 30 * 100) + '%';
+  $('barre').style.backgroundColor = reste <= 5 ? '#d32f2f' : '#1a2a6c';
+  if (reste === 0) {
+    try { const d = await appeler(pinValide); if (d.ok) majCode(d); } catch (e) {}
+  }
+}, 1000);
+
+function verrouiller() {
+  pinValide = ''; pin = '';
+  $('accueil').classList.remove('on'); $('ecran-verrou').classList.add('on');
+  $('pin-titre').textContent = 'Saisissez le code PIN'; dessinerPoints();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poste de Travail - Adrien Kovac</title>
+    <link rel="stylesheet" href="css/bureau.css">
+    <link rel="stylesheet" href="css/apps.css">
+</head>
+<body>
+
+    <!-- ÉCRAN DE CONNEXION : mot de passe, puis code de double authentification -->
+    <div id="login-screen">
+        <div class="avatar">AK</div>
+        <h1>Adrien Kovac</h1>
+        <div id="stage-pass" style="display:flex; flex-direction:column; align-items:center">
+            <input type="password" id="win-password" placeholder="Mot de passe ou Code PIN" autofocus>
+            <button id="login-btn">Se connecter</button>
+        </div>
+        <div id="stage-2fa">
+            <p class="sub">Vérification en deux étapes.<br>Saisissez le code à 6 chiffres envoyé sur le téléphone d'Adrien.</p>
+            <input type="text" id="win-2fa" inputmode="numeric" maxlength="7" placeholder="000 000" autocomplete="off">
+            <button id="fa-btn">Valider</button>
+        </div>
+        <div id="login-error"></div>
+    </div>
+
+    <!-- BUREAU -->
+    <div id="desktop">
+        <div class="icon-grid" id="icones"></div>
+        <div id="fenetres"></div>
+
+        <div id="taskbar">
+            <div class="start-btn">⊞ Start</div>
+            <div id="taches"></div>
+            <div id="tray">
+                <button id="btn-indice" title="Un indice coûte 5 % de fuite">💡 Indice</button>
+                <div id="jauge-bloc"><span>Fuite</span><div id="jauge-barre"><div id="leak-fill"></div></div><span id="leak-pct">0%</span></div>
+                <div id="chrono" title="Temps avant la fuite totale">--:--</div>
+                <div id="horloge"></div>
+            </div>
+        </div>
+
+        <div id="toasts"></div>
+        <div id="alarme"><div class="bandeau">⚠ ALARME GÉNÉRALE</div></div>
+        <div id="fin"></div>
+    </div>
+
+    <script src="js/apps/documents.js"></script>
+    <script src="js/apps/photos.js"></script>
+    <script src="js/apps/navigateur.js"></script>
+    <script src="js/apps/calculatrice.js"></script>
+    <script src="js/apps/baie.js"></script>
+    <script src="js/apps/reseau.js"></script>
+    <script src="js/apps/editeur.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

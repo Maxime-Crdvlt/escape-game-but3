@@ -65,3 +65,34 @@ Cette semaine, nous avons récupéré le matériel IoT le jeudi 15 octobre et te
 - Connecter NestJS à Mosquitto (abonnement à `lerna/#`, affichage des messages reçus).
 - Définir avec Tanim les topics MQTT et leur format dans `docs/mqtt-topics.md`.
 - Mardi 20/10 à l'IUT : brancher la carte et la faire communiquer avec le broker (IP à mettre à jour sur le réseau de l'IUT).
+
+## Semaine 3 (du 19/10 au 25/10/2026)
+
+**Focus de la semaine :** Test du matériel en équipe et connexion du backend à Mosquitto
+**Temps total travaillé :** 2h
+
+### Synthèse
+
+Cette semaine, j'ai participé à la séance de SAÉ en équipe consacrée au test du matériel physique : Ethan a branché les appareils à son PC et, avec un petit programme, il a réussi à allumer les LED. La liaison entre la carte et le code a donc été testée en groupe, par Ethan. De mon côté, l'objectif de la connexion du backend NestJS au broker Mosquitto : le service s'abonne à `lerna/#` et affiche les messages reçus (testé avec MQTTX). J'ai transmis à Tanim une proposition de topics MQTT, qui n'est pas encore validée, et la stack n'est pas non plus validée par l'équipe.
+
+### Détail des activités
+
+| Catégorie | Description de la tâche / Lien ticket | Temps (h) | Statut |
+| :--- | :--- | :--- | :--- |
+| Tests matériels | Séance de SAÉ en équipe : test du matériel physique et démonstration d'Ethan (LED allumées depuis son PC) | 1.5 | Terminé |
+| Backend | Service MQTT dans NestJS (connexion à Mosquitto via `MQTT_URL`, abonnement à `lerna/#`, journalisation des messages, méthode `publish`), commit `daf85f6` sur la branche `backend-init` | 0.5 | Terminé |
+
+### Difficultés et solutions
+
+**Problème 1 :** Pendant la semaine on ne s'est toujours pas mis complètement d'accord sur la stack.
+**Solution :** J'ai terminé la partie connexion NestJS–Mosquitto, en attendant nous allons continuer a réfléchir sur la stack.
+
+**Problème 2 :** Les tests générés par NestJS échouent avant leur exécution (erreur de compatibilité Jest/TypeScript, `TS5011`).
+**Solution :** À corriger en semaine 4, car le cours demande des tests et une CI.
+
+### Objectifs S+1 (Semaine 4)
+
+- Faire valider la stack et les topics MQTT par l'équipe, et les consigner dans le dépôt (`docs/mqtt-topics.md`).
+- Voir avec l'équipe où le backend s'intègre dans le terminal et le code de la carte déjà présents sur `main`.
+- Réparer les tests Jest du backend.
+- Participer aux séances en présentiel pour tester la liaison entre le code et le matériel.

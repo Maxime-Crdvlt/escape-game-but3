@@ -80,3 +80,31 @@ Cette semaine, j'ai pris le matériel prêté par le professeur chez moi pour le
 - Brancher le buzzer, les interrupteurs et le gros bouton
 - Tester le code sur les cartes (Raspberry Pi et Arduino)
 - Avancer avec l'équipe sur l'authentification par téléphone (A2F)
+
+
+## Semaine 4 (du 26/10 au 01/11/2026)
+
+**Focus de la semaine :** Branchements en présentiel, liaison carte/site et abandon du Raspberry Pi
+**Temps total travaillé :** 5h15
+
+### Synthèse
+Jeudi 29/10, on s'est retrouvés en présentiel et on a fait les branchements : LED, buzzer, servo, barre de LED, écran et les boutons sur la carte d'extension. J'ai ensuite relié la carte au site par le broker MQTT et j'ai testé que les boutons et l'alarme réagissent bien. J'ai aussi essayé de préparer le Raspberry Pi, mais la carte SD ne marchait pas, donc on a décidé de tout faire tourner sur le PC. Pour finir, j'ai rangé le code et je l'ai mis sur GitHub en plusieurs commits signés
+
+### Détail des activités
+
+| Catégorie | Description de la tâche | Temps (h) | Statut |
+| :--- | :--- | :--- | :--- |
+| Matériel | Présentiel du jeudi 29/10 : branchements de tous les composants et vérification de chacun avec un programme de test | 2h | Terminé |
+| IoT | Connexion de la carte au Wi-Fi et au broker MQTT, puis test des boutons et de l'alarme depuis le site | 1h | Terminé |
+| Matériel | Préparation de la carte SD du Raspberry Pi (plusieurs essais) | 45min | Abandonné |
+| Organisation | Rangement du projet en dossiers, tests et mise en ligne sur GitHub en plusieurs commits signés | 1h30 | Terminé |
+
+### Difficultés et solutions
+**Problème :** la carte SD du Raspberry Pi n'enregistrait rien, même avec une autre prise, et la carte ne voulait pas se connecter au Wi-Fi (deux lettres du mot de passe étaient inversées)
+**Solution :** on a abandonné le Raspberry Pi et tout tourne sur le PC, et j'ai corrigé le mot de passe. J'ai aussi vu que la page du téléphone ne s'ouvrait pas sur mon portable parce que le site n'était ouvert qu'à ce PC, donc je l'ai ouvert au réseau
+
+### Objectifs S+1
+- Semaine de DST : travailler plus calmement sur le projet
+- Tester avec les vrais boutons de la baie et étiqueter les boutons
+- Régler le volume du buzzer dans la salle
+- Préparer les vidéos de prévention et la vidéo d'introduction

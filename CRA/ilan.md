@@ -47,7 +47,7 @@ Cette semaine, toute l'équipe est allée récupérer le matériel IoT le jeudi 
 | :--- | :--- | :--- | :--- |
 | Logistique / IoT | Récupération du matériel IoT avec toute l'équipe (jeudi 15/10) | 15 min | Terminé |
 | Organisation | Réunions d'équipe en soirée (mardi et vendredi) | 2h | Terminé |
-| Documentation | Recherche personnelle sur les équipements IoT et leur fonctionnement, en complément des explications de l'équipe | 1h | Terminé |
+| Documentation | Recherche personnelle sur les équipements IoT et leur fonctionnement, en complément des explications de l'équipe | 1h | En cours |
 
 ### Difficultés et solutions
 
@@ -87,5 +87,34 @@ Cette semaine, l'équipe s'est retrouvée lors d'une séance de SAÉ pour tester
 - Participer aux séances en présentiel prévues du 26 au 31/10 pour avancer avec l'équipe sur les épreuves.
 - Contribuer aux tests de liaison entre le code et le matériel.
 - Continuer ma documentation sur les équipements.
+
+
+## Semaine 4 (du 26/10 au 01/11/2026)
+
+**Focus de la semaine :** Séance en présentiel, branchements du matériel et fin de ma documentation technique  
+**Temps total travaillé :** 3h
+
+### Synthèse
+
+Cette semaine, l'équipe s'est retrouvée en présentiel le jeudi 29/10 pour réaliser les branchements du matériel ensemble. De mon côté, j'ai terminé ma documentation sur les éléments techniques du projet (Arduino, etc.). La semaine prochaine sera plus calme sur le projet, car c'est la semaine des DST : nous allons surtout améliorer quelques petits détails et laisser chacun réviser.
+
+### Détail des activités
+
+| Catégorie | Description de la tâche / Lien ticket | Temps | Statut |
+| :--- | :--- | :--- | :--- |
+| Matériel | Séance en présentiel du jeudi 29/10 : branchements du matériel avec l'équipe | 2h | Terminé |
+| Documentation | Fin de ma documentation sur les éléments techniques du projet (Arduino, etc.) | 1h | Terminé |
+
+### Difficultés et solutions
+
+- **Problème :** La carte SD du Raspberry Pi ne fonctionnait pas, malgré plusieurs essais de l'équipe.
+- **Solution :** L'équipe a décidé d'abandonner le Raspberry Pi et de faire tourner tout le projet sur un PC.
+
+### Objectifs S+1
+
+- Travailler plus calmement sur le projet pendant la semaine des DST.
+- Me documenter sur l'aspect écologique du projet.
+- Continuer à améliorer quelques petits détails avec l'équipe.
+- Reprendre pleinement l'avancement du projet après les DST.
 
 ---

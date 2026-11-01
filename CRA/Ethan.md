@@ -73,3 +73,27 @@ Objectifs S+1 (Semaine 4 / du 26 au 31/10/2026)
 - Pousser les tests de liaison entre le code et les composants matériels.
 - Tester le code sur les cartes électroniques (Raspberry Pi 3/Arduino).
 - Avancer sur l'A2F et connecter le téléphone au reste du système.
+
+
+## Semaine 4 (du 26/10 au 01/11/2026)
+Focus de la semaine : Retrouvaille en présentiel, branchements, amélioration du terminal et avancement des épreuves
+Temps total travaillé : 4h
+
+Synthese
+Cette semaine, on s'est retrouvé jeudi pour travailler ensemble en présentiel. On a fait plusieurs branchements matériels et apporté d'autres améliorations. Le code du terminal a bien progressé, et on a implémenté l'A2F (double authentification) en version PC en attendant d'avoir un vrai téléphone portable. De plus, deux épreuves ont bien avancé : celle du réseau avec les boutons et celle du code à trou. La semaine prochaine sera plus calme niveau projet car c'est la semaine des DST, donc on va juste améliorer quelques petits détails.
+
+Detail des activites
+| Categorie | Description de la tache / Lien ticket | Temps (h) | Statut |
+| :--- | :--- | :--- | :--- |
+| Presentiel & IoT | Retrouvaille en équipe le jeudi, réalisation des branchements et améliorations matérielles | 2.0 | Terminé |
+| Developpement Web | Amélioration du terminal et mise en place de l'A2F version PC en attendant le smartphone | 1.0 | Terminé |
+| Avancement Epreuves | Progression sur l'épreuve du réseau (boutons) et l'épreuve du code à trou | 1.0 | En cours |
+
+Difficultes et Solutions
+- Probleme : Absence temporaire de smartphone dédié pour tester l'A2F en conditions réelles et gestion du planning serré avec les examens.
+- Solution : Implémentation provisoire d'une version A2F sur PC et réorganisation du rythme de travail pour assurer les révisions des DST.
+
+Objectifs S+1 (Semaine 5)
+- Travailler un peu plus calmement sur le projet en raison de la semaine de DST.
+- Améliorer quelques petits détails sur le code et les épreuves existantes.
+- Préparer la suite des développements pour la période post-examens.

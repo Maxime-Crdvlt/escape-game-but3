@@ -20,6 +20,7 @@ define('TOPIC_ETAT',   "$prefixe/etat");         // attente / jeu / alarme / vic
 define('TOPIC_JAUGE',  "$prefixe/jauge");        // 0 à 100
 define('TOPIC_MSG',    "$prefixe/msg");          // texte à afficher sur la 1re ligne de l'écran (vide = texte par défaut)
 define('TOPIC_BOUTON', "$prefixe/bouton/");      // + nom du bouton, envoyé par la carte
+define('TOPIC_COFFRE', "$prefixe/coffre");       // OUVERT / FERME, commande le servomoteur
 define('TOPIC_CARTE',  "$prefixe/carte/etat");   // en-ligne / hors-ligne, envoyé par la carte
 define('TOPIC_PONT',   "$prefixe/pont/etat");    // en-ligne / hors-ligne, envoyé par le pont
 unset($prefixe);
@@ -116,7 +117,7 @@ function game_reset(string $source = 'terminal'): void
 {
     if (game_step() >= S_LOGIN) { if (state_get('fin') === null) state_set('fin', time()); game_archiver('abandon'); }
     $cles = ['step', 'penalty', 'start', 'fin', 'frozen', 'defaite_notee', 'rab', 'indices', 'seq', 'tel_essais', 'tel_bloque',
-             'tel_deverrouille', 'ordre', 'etapes', 'erreurs', 'archive', 'baie_journal'];
+             'tel_deverrouille', 'ordre', 'etapes', 'erreurs', 'archive', 'baie_journal', 'coffre', 'usb_forcee'];
     for ($i = 0; $i <= S_SCRIPT; $i++) $cles[] = "hint_$i";
     state_del(...$cles);
     event_add('reset', "source : {$source}");
@@ -328,6 +329,22 @@ function game_stats(): array
     return $s;
 }
 
+/** Détecte l'insertion d'une clé USB sur le PC (lecteurs amovibles D: à Z:). */
+function detecter_cle_usb(): array
+{
+    if (state_get('usb_forcee') === '1') {
+        return ['detectee' => true, 'lecteur' => 'D:', 'has_fichier' => true];
+    }
+    foreach (range('D', 'Z') as $letter) {
+        $path = $letter . ':\\';
+        if (@is_dir($path)) {
+            $hasUrgence = @file_exists($path . 'urgence.sh');
+            return ['detectee' => true, 'lecteur' => $letter . ':', 'has_fichier' => $hasUrgence];
+        }
+    }
+    return ['detectee' => false, 'lecteur' => null, 'has_fichier' => false];
+}
+
 /** Ce que la carte doit afficher / jouer : sujet MQTT => valeur. */
 function game_outputs(): array
 {
@@ -339,6 +356,7 @@ function game_outputs(): array
         TOPIC_ETAT   => $phase,
         TOPIC_JAUGE  => (string) game_leak(),
         TOPIC_MSG    => $msg,
+        TOPIC_COFFRE => state_get('coffre', 'FERME'),
     ];
 }
 

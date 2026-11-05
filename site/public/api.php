@@ -27,6 +27,8 @@ function etat(): array
         'restant' => game_restant(), 'nb_mails' => $step >= S_2FA ? $nbMails : 0,
         'serveurs' => $step >= S_SERVEURS ? ordre_redemarrage() : game_serveurs_redemarres(),
         'indices' => (int) state_get('indices', '0'),
+        'coffre' => state_get('coffre', 'FERME'),
+        'usb' => detecter_cle_usb(),
         'mission' => ['n' => min($step, S_SCRIPT) + 1, 'total' => S_SCRIPT + 1, 'titre' => objectifs()[min($step, S_SCRIPT)]] + briefing()[min($step, S_SCRIPT)],
         'nb_docs' => $step >= S_2FA ? count(array_filter(documents(), fn($d) => $d['etape'] <= $step)) + count(array_filter(photos(), fn($p) => $p['etape'] <= $step)) : 0,
     ];
@@ -105,9 +107,51 @@ if (isset($in['action'])) {
         case 'documents':   // explorateur de fichiers, navigateur intranet
             $docs = [];
             foreach (documents() as $d) if ($d['etape'] <= $step) { unset($d['etape']); $docs[] = $d; }
+            $usb = detecter_cle_usb();
+            if ($usb['detectee']) {
+                $docs[] = [
+                    'id' => 'doc-urgence-usb',
+                    'dossier' => 'Clé USB (' . ($usb['lecteur'] ?: 'D:') . ')',
+                    'titre' => 'urgence.sh',
+                    'texte' => "PROCÉDURE D'ARRÊT D'URGENCE (support physique sécurisé)\n\nFichier extrait de la clé USB de la cellule Zéro-Jour.\nGlissez-déposez ce fichier dans l'application Coffre d'urgence pour le charger et réparer la procédure."
+                ];
+            }
             $photos = [];
             foreach (photos() as $p) if ($p['etape'] <= $step) { unset($p['etape']); $photos[] = $p; }
-            echo json_encode(['documents' => $docs, 'photos' => $photos], JSON_UNESCAPED_UNICODE);
+            echo json_encode(['documents' => $docs, 'photos' => $photos, 'usb' => $usb], JSON_UNESCAPED_UNICODE);
+            break;
+
+        case 'coffre_code':
+            $code = trim((string) ($in['code'] ?? ''));
+            if ((int) $code === ID_SUPERVISEUR) {
+                if ($step < S_AUTH) {
+                    game_unlock(S_AUTH);
+                    event_add('auth', 'superviseur d\'urgence authentifié via le coffre');
+                }
+                state_set('coffre', 'OUVERT');
+                event_add('coffre', 'code 4117 validé, servo actionné');
+                echo json_encode(['ok' => true, 'message' => "Code 4117 validé ! Le servomoteur a déverrouillé le coffre. Récupérez la clé USB physique et branchez-la au PC."] + etat(), JSON_UNESCAPED_UNICODE);
+            } else {
+                game_penalty(PENALITE_ERREUR, "code coffre erroné : $code");
+                echo json_encode(['ok' => false, 'message' => "Code de sécurité incorrect. +3 % de fuite."] + etat(), JSON_UNESCAPED_UNICODE);
+            }
+            break;
+
+        case 'detecter_usb':
+            echo json_encode(detecter_cle_usb() + etat(), JSON_UNESCAPED_UNICODE);
+            break;
+
+        case 'coffre_injecter':
+            $fichier = trim((string) ($in['fichier'] ?? ''));
+            if ($fichier === 'urgence.sh' || str_ends_with($fichier, 'urgence.sh')) {
+                if ($step < S_ALARME) {
+                    game_unlock(S_ALARME);
+                    event_add('alarme', 'clé USB branchée et fichier urgence.sh injecté');
+                }
+                echo json_encode(['ok' => true, 'message' => "Procédure d'urgence chargée ! Alarme générale déclenchée."] + etat(), JSON_UNESCAPED_UNICODE);
+            } else {
+                echo json_encode(['ok' => false, 'message' => "Fichier non reconnu. Glissez le fichier urgence.sh depuis la clé USB."] + etat(), JSON_UNESCAPED_UNICODE);
+            }
             break;
 
         case 'script':
@@ -329,7 +373,7 @@ Recherchez l'IP suspecte et tapez 'cibler [IP]'");
         if ((int) $arg === ID_SUPERVISEUR) {
             game_unlock(S_AUTH);
             event_add('auth', 'superviseur d\'urgence authentifié');
-            reply("[SUCCÈS] ID " . ID_SUPERVISEUR . " accepté : A. KOVAC, superviseur d'urgence.\nLe module d'arrêt est déverrouillé. Tapez 'run urgence.sh'.", 'success-msg');
+            reply("[SUCCÈS] ID " . ID_SUPERVISEUR . " accepté : A. KOVAC, superviseur d'urgence.\nOuvrez l'application « Coffre d'urgence » sur le bureau et entrez le code de sécurité " . ID_SUPERVISEUR . " pour déverrouiller la clé USB.", 'success-msg');
         }
         game_penalty(PENALITE_ERREUR, 'mauvais ID superviseur');
         reply("Cet ID n'a pas l'habilitation URGENCE_PHYSIQUE dans la cellule ZERO-JOUR. +3% de fuite.", 'error-msg');

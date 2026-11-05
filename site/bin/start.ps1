@@ -1,4 +1,4 @@
-﻿# Lance le terminal L.E.R.N.A. : le serveur web local (PHP), le pont vers la carte Arduino, et si besoin le broker Mosquitto.
+# Lance le terminal L.E.R.N.A. : le serveur web local (PHP), le pont vers la carte Arduino, et si besoin le broker Mosquitto.
 # Usage : powershell -ExecutionPolicy Bypass -File site\bin\start.ps1 [-Port 8000] [-Local] [-Broker]
 #   -Local  : seul ce PC peut ouvrir le site. Par défaut le site est ouvert au réseau local (téléphone, page Game Master).
 #   -Broker : lance aussi Mosquitto avec mosquitto\mosquitto.conf (sauf s'il tourne déjà pour le réseau local).
@@ -35,9 +35,9 @@ else { Write-Host "Broker MQTT : localhost (pas de secrets.h trouvé)" }
 if ($Broker) {
     $mosq = 'C:\Program Files\mosquitto\mosquitto.exe'
     $conf = Join-Path $PSScriptRoot '..\..\mosquitto\mosquitto.conf'
-    $dejaLa = Get-NetTCPConnection -State Listen -LocalPort 1883 -ErrorAction SilentlyContinue | Where-Object { $_.LocalAddress -eq '0.0.0.0' }
+    $dejaLa = Get-NetTCPConnection -State Listen -LocalPort 1884 -ErrorAction SilentlyContinue | Where-Object { $_.LocalAddress -eq '0.0.0.0' }
     if ($dejaLa) {
-        Write-Host "Un broker écoute déjà sur le réseau (port 1883) : je n'en lance pas un deuxième."
+        Write-Host "Un broker écoute déjà sur le réseau (port 1884) : je n'en lance pas un deuxième."
     } elseif (-not (Test-Path $mosq)) {
         Write-Host "Mosquitto est introuvable dans C:\Program Files\mosquitto. Installez-le (winget install EclipseFoundation.Mosquitto)." -ForegroundColor Red
     } else {

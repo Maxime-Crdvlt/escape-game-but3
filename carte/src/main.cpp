@@ -16,6 +16,11 @@
 const char* ssid        = WIFI_SSID;         // Wi-Fi 2.4 GHz obligatoire
 const char* password    = WIFI_PASSWORD;
 const char* mqtt_server = MQTT_SERVER_IP;    // IP du PC (ou du Raspberry Pi) qui fait tourner Mosquitto
+#ifdef MQTT_SERVER_PORT
+const uint16_t mqtt_port = MQTT_SERVER_PORT;
+#else
+const uint16_t mqtt_port = 1883;
+#endif
 
 // --- Branchements (prises de la carte d'extension) ---
 const uint8_t PIN_LED_ROUGE = 2;    // prise D2
@@ -204,6 +209,9 @@ void onMessage(char* topic, byte* payload, unsigned int len) {
   } else if (!strcmp(topic, "lerna/msg")) {
     strncpy(message, msg, sizeof(message) - 1);
     message[sizeof(message) - 1] = 0;
+  } else if (!strcmp(topic, "lerna/coffre")) {
+    if (!strcmp(msg, "OUVERT")) deplacerServo(SERVO_OUVERT);
+    else if (!strcmp(msg, "FERME")) deplacerServo(SERVO_FERME);
   } else if (!strcmp(topic, "lerna/etat")) {
     if      (!strcmp(msg, "attente"))  changerPhase(ATTENTE);
     else if (!strcmp(msg, "jeu"))      changerPhase(JEU);
@@ -236,6 +244,7 @@ void maintenirReseau() {
       mqtt.subscribe("lerna/etat");
       mqtt.subscribe("lerna/jauge");
       mqtt.subscribe("lerna/msg");
+      mqtt.subscribe("lerna/coffre");
       dernierL1[0] = dernierL2[0] = 0;   // on force le réaffichage
       afficherPhase();
     } else {
@@ -293,7 +302,7 @@ void setup() {
   dernierNiveauBarre = 0;
 
   deplacerServo(SERVO_FERME);
-  mqtt.setServer(mqtt_server, 1883);
+  mqtt.setServer(mqtt_server, mqtt_port);
   mqtt.setCallback(onMessage);
   mqtt.setKeepAlive(15);
 }

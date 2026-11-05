@@ -46,7 +46,17 @@ function dessinerExplorateur() {
   if (!$('expl-arbre')) return;
   $('expl-chemin').textContent = 'C:\\Utilisateurs\\Kovac\\' + (CHEMINS[docDossier] || docDossier);
   const arbre = $('expl-arbre'); arbre.innerHTML = '';
-  for (const [nom, ico] of DOSSIERS) {
+  
+  // Inclure les dossiers de base + les dossiers dynamiques (ex: Clé USB)
+  const listeDossiers = [...DOSSIERS];
+  const dossiersPresents = new Set(DOCS.map(d => d.dossier));
+  for (const nom of dossiersPresents) {
+    if (!listeDossiers.some(x => x[0] === nom)) {
+      listeDossiers.push([nom, '💾']);
+    }
+  }
+
+  for (const [nom, ico] of listeDossiers) {
     const n = DOCS.filter(d => d.dossier === nom).length;
     const li = el('div', 'expl-dossier' + (nom === docDossier ? ' sel' : ''));
     li.append(el('div', '', ico + ' ' + nom), el('span', 'n', String(n)));
@@ -59,6 +69,11 @@ function dessinerExplorateur() {
   for (const f of fichiers) {
     const it = el('div', 'expl-fichier' + (docSel === f.id ? ' sel' : ''));
     it.append(el('span', 'ic', iconeFichier(f.titre)), el('span', '', f.titre));
+    it.setAttribute('draggable', 'true');
+    it.ondragstart = (e) => {
+      e.dataTransfer.setData('text/plain', f.titre);
+      e.dataTransfer.setData('application/lerna-file', f.titre);
+    };
     it.onclick = () => lireDoc(f.id);
     liste.appendChild(it);
   }
@@ -74,6 +89,17 @@ function lireDoc(id) {
   v.appendChild(el('div', 'meta', f.dossier + ' · ' + (/\.pdf/i.test(f.titre) ? 'Document PDF' : /\.exe$/i.test(f.titre) ? 'Fichier mis en quarantaine' : 'Fichier texte')));
   const pre = el('pre', '', f.texte);
   if (/\.pdf/i.test(f.titre)) { const p = el('div', 'papier'); p.appendChild(pre); v.appendChild(p); } else v.appendChild(pre);
+  if (f.titre === 'urgence.sh') {
+    const b = el('button', 'btn-injecter-usb', '⚡ Glisser ou Injecter dans le Coffre');
+    b.onclick = () => {
+      if (typeof coffreInjecterFichier === 'function') {
+        coffreInjecterFichier('urgence.sh');
+      } else {
+        toast('Coffre d\'urgence', 'Ouvrez l\'application Coffre d\'urgence pour injecter le fichier.', 'ok');
+      }
+    };
+    v.appendChild(b);
+  }
   if (f.dossier === 'Corbeille') {
     const b = el('button', '', '↩ Restaurer');
     b.onclick = () => toast('Corbeille', 'Restauration impossible : droits insuffisants.', 'alerte');

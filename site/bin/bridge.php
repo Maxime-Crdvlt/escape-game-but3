@@ -8,8 +8,8 @@
 if (PHP_SAPI !== 'cli') { http_response_code(404); exit; }
 require __DIR__ . '/../src/game.php';
 
-$host = getenv('LERNA_MQTT_HOST') ?: 'localhost';
-$port = (int) (getenv('LERNA_MQTT_PORT') ?: 1883);
+$host = getenv('LERNA_MQTT_HOST') ?: '127.0.0.1';
+$port = (int) (getenv('LERNA_MQTT_PORT') ?: 1884);
 $maxSeconds = (int) (getenv('LERNA_BRIDGE_MAX_SECONDS') ?: 0);   // pour les tests : s'arrête tout seul
 $started = time();
 

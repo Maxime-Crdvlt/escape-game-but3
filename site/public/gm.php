@@ -41,6 +41,8 @@ function gm_state(): array
         'serveurs' => game_serveurs_redemarres(),
         'ordre'    => game_step() >= S_LOGIN ? array_map(fn($id) => ['id' => $id, 'nom' => nom_serveur($id), 'bouton' => bouton_du_serveur($id)], ordre_redemarrage()) : [],
         'carte'    => state_get('carte', 'inconnue'),
+        'coffre'   => state_get('coffre', 'FERME'),
+        'usb'      => detecter_cle_usb(),
         'pont'     => time() - (int) state_get('pont', '0') < 5,
         'tel'      => state_get('tel_deverrouille') !== null,
         'ip_lan'   => ip_lan(),
@@ -83,6 +85,16 @@ try {
                 break;
             case 'victoire':
                 game_victory('game master');
+                break;
+            case 'coffre':
+                $nv = state_get('coffre') === 'OUVERT' ? 'FERME' : 'OUVERT';
+                state_set('coffre', $nv);
+                event_add('gm', "coffre forcé : $nv");
+                break;
+            case 'usb':
+                $nv = state_get('usb_forcee') === '1' ? '0' : '1';
+                state_set('usb_forcee', $nv);
+                event_add('gm', "usb forcée : $nv");
                 break;
             case 'rab':
                 if (!game_rab()) { http_response_code(409); echo json_encode(['error' => 'Le rab maximum (15 min) est déjà accordé.'], JSON_UNESCAPED_UNICODE); exit; }

@@ -54,6 +54,7 @@ function appliquerEtat(d) {
   majChrono();
   $('prompt') && ($('prompt').textContent = d.prompt || 'C:\\Users\\Kovac>');
   majIcones();
+  if (typeof majAffichageCoffre === 'function') majAffichageCoffre();
   $('alarme').style.display = d.phase === 'alarme' ? 'block' : 'none';
   if (bureauOuvert) majMission(!premiere && d.step !== avant.step);
 
@@ -74,6 +75,7 @@ function etapeFranchie(step) {
   if (step === S_IP) toast('Carte réseau déverrouillée', 'Le pirate garde un relais dans le réseau. Ouvrez la Carte réseau (cliquez sur une machine), ou tapez scan et netstat.', 'ok');
   else if (step === S_PIVOT) { toast('Relais coupé', 'Les 4 serveurs sont corrompus : l\'application Baie serveurs s\'ouvre, redémarrez-les avec les boutons de la baie.', 'ok'); fenetres.baie.ouvrir(); }
   else if (step === S_SERVEURS) toast('Base de données accessible', 'Tapez bd dans le terminal. Le guide SQL est dans Documents.', 'ok');
+  else if (step === S_AUTH) { toast('Superviseur authentifié', 'Le code 4117 est validé. L\'application Coffre d\'urgence s\'ouvre pour déverrouiller la clé USB.', 'ok'); fenetres.coffre.ouvrir(); }
   else if (step === S_ALARME) toast('ALARME GÉNÉRALE', 'La procédure d\'arrêt est corrompue : ouvrez urgence.sh dans l\'éditeur.', 'alerte');
   else if (step === S_SCRIPT) toast('Kill switch armé', 'La procédure est réparée. Appuyez sur le bouton ARRÊT de la baie !', 'ok');
 }
@@ -232,6 +234,7 @@ const ICONES = [
   { id: 'docs', emoji: '📁', nom: 'Documents', ouvre: () => ouvrirDocuments('Documentation') },
   { id: 'reseau', emoji: '🕸️', nom: 'Carte réseau', minStep: S_IP, raison: 'Module verrouillé : isolez d\'abord la menace (commande cibler).', ouvre: () => fenetres.reseau.ouvrir() },
   { id: 'baie', emoji: '🗄️', nom: 'Baie serveurs', minStep: S_PIVOT, raison: 'Supervision indisponible : coupez d\'abord le relais du pirate.', ouvre: () => fenetres.baie.ouvrir() },
+  { id: 'coffre', emoji: '🔐', nom: 'Coffre d\'urgence', minStep: S_SUSPECT, raison: 'Coffre verrouillé : identifiez d\'abord l\'employé piégé.', ouvre: () => fenetres.coffre.ouvrir() },
   { id: 'script', emoji: '📝', nom: 'urgence.sh', minStep: S_ALARME, raison: 'Fichier protégé : il faut d\'abord lancer le script d\'urgence.', ouvre: () => fenetres.script.ouvrir() },
   { id: 'photos', emoji: '🖼️', nom: 'Photos', ouvre: () => fenetres.photos.ouvrir() },
   { id: 'web', emoji: '🌐', nom: 'Navigateur', ouvre: () => fenetres.nav.ouvrir() },
@@ -260,6 +263,7 @@ function construireBureau() {
   construireExplorateur(geo(.12, .07, .60, .72));
   construireReseau(geo(.07, .03, .72, .88));
   construireBaie(geo(.10, .05, .66, .78));
+  construireCoffre(geo(.16, .05, .58, .84));
   construireEditeur(geo(.14, .04, .62, .88));
   construireGalerie(geo(.15, .08, .56, .72));
   construireNavigateur(geo(.12, .06, .62, .80));

@@ -146,3 +146,39 @@
 .pt-cli .invite { display: flex; } .pt-cli input { flex: 1; background: transparent; border: none; outline: none; color: #fff; font: inherit; user-select: text; }
 .pt-cli .ok { color: #7fe38c; } .pt-cli .err { color: #ff8a8a; }
 .pt-phys { height: 150px; display: flex; align-items: center; justify-content: center; background: linear-gradient(#cfd7e2, #aeb9c8); border: 1px solid #8f9bab; font-size: 12px; color: #334; }
+
+/* --- COFFRE FORT & CLÉ USB --- */
+.coffre-app { flex: 1; min-height: 0; background: #0f141c; color: #dce5f2; display: flex; flex-direction: column; overflow-y: auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+.coffre-panneau { padding: 22px; max-width: 650px; margin: 0 auto; width: 100%; box-sizing: border-box; }
+.coffre-header { margin-bottom: 20px; border-bottom: 1px solid #233042; padding-bottom: 14px; }
+.coffre-badge { display: inline-block; padding: 6px 14px; border-radius: 4px; font-weight: 700; font-size: 13px; letter-spacing: 0.05em; margin-bottom: 8px; }
+.coffre-badge.ferme { background: #3d1414; color: #ff6b6b; border: 1px solid #752828; }
+.coffre-badge.ouvert { background: #12351f; color: #4ade80; border: 1px solid #23683a; }
+.coffre-desc { color: #8fa0b5; margin: 0; font-size: 13px; }
+.coffre-section { background: #161e2b; border: 1px solid #26354a; border-radius: 8px; padding: 18px 20px; margin-bottom: 18px; }
+.coffre-section h3 { margin: 0 0 8px 0; font-size: 15px; color: #60a5fa; }
+.coffre-sous-titre { margin: 0 0 14px 0; color: #94a3b8; font-size: 13px; line-height: 1.45; }
+.coffre-code-input-group { display: flex; gap: 10px; align-items: center; }
+.coffre-code-input-group input { width: 140px; padding: 10px 14px; background: #0b0f16; border: 2px solid #3b82f6; border-radius: 6px; color: #fff; font-size: 22px; text-align: center; letter-spacing: 0.3em; font-weight: 700; font-family: Consolas, monospace; outline: none; }
+.coffre-code-input-group input:focus { border-color: #60a5fa; box-shadow: 0 0 10px rgba(96, 165, 250, 0.4); }
+.btn-coffre { background: #2563eb; color: #fff; border: none; padding: 10px 18px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 14px; transition: background 0.2s; }
+.btn-coffre:hover { background: #1d4ed8; }
+.coffre-msg { margin-top: 8px; font-size: 13px; font-weight: 600; }
+.coffre-msg.ok { color: #4ade80; }
+.coffre-msg.ko { color: #f87171; }
+.coffre-alerte-succes { display: flex; gap: 14px; background: rgba(34, 197, 94, 0.12); border: 1px solid #22c55e; border-radius: 6px; padding: 12px 16px; margin-bottom: 16px; align-items: flex-start; }
+.coffre-alerte-succes .ico { font-size: 24px; line-height: 1; }
+.coffre-alerte-succes strong { color: #4ade80; font-size: 14px; }
+.coffre-alerte-succes p { margin: 4px 0 0 0; color: #cbd5e1; font-size: 12.5px; line-height: 1.4; }
+.coffre-usb-status { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 6px; font-size: 13.5px; }
+.coffre-usb-status.en-attente { background: #1f1b13; border: 1px dashed #d97706; color: #fbbf24; }
+.coffre-usb-status.connectee { background: #13271c; border: 1px solid #16a34a; color: #4ade80; }
+.usb-pulse { width: 10px; height: 10px; border-radius: 50%; background: #f59e0b; display: inline-block; animation: pulse 1.4s infinite; }
+@keyframes pulse { 0% { transform: scale(0.9); opacity: 0.6; } 50% { transform: scale(1.3); opacity: 1; } 100% { transform: scale(0.9); opacity: 0.6; } }
+.coffre-drop-zone { border: 2px dashed #475569; border-radius: 8px; padding: 26px 20px; text-align: center; background: #0c1118; cursor: pointer; transition: all 0.25s; }
+.coffre-drop-zone:hover, .coffre-drop-zone.dragover { border-color: #38bdf8; background: rgba(56, 189, 248, 0.08); transform: scale(1.01); }
+.coffre-drop-zone .drop-ico { font-size: 34px; margin-bottom: 6px; }
+.coffre-drop-zone .drop-titre { font-size: 15px; font-weight: 700; color: #f1f5f9; }
+.coffre-drop-zone .drop-sous { font-size: 12px; color: #64748b; margin-top: 4px; }
+.btn-injecter-usb { display: inline-block; margin-top: 14px; padding: 8px 14px; background: #16a34a; color: #fff; border: none; border-radius: 4px; font-weight: 600; cursor: pointer; }
+.btn-injecter-usb:hover { background: #15803d; }

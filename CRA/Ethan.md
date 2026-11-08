@@ -94,9 +94,23 @@ Objectifs S+1 (Semaine 5)
 - Améliorer quelques petits détails sur le code et les épreuves existantes.
 - Préparer la suite des développements pour la période post-examens.
 
-<<<<<<< HEAD
-=======
+
 ## Semaine 5 (du 02/11 au 08/11/2026)
 - Temps total travaillé : 2h
->>>>>>> 15fcae27251b4a0c9e3ab8248125cddacc041584
 
+Synthese
+Cette semaine, avec les DST, je n'ai pas trop pu travailler sur le projet. J'ai quand même pris le temps de nettoyer quelques bugs dans le code et de mettre à jour la dernière épreuve pour qu'elle corresponde mieux à ce qu'on avait prévu au départ. 
+
+Detail des activites
+| Categorie | Description de la tache / Lien ticket | Temps (h) | Statut |
+| :--- | :--- | :--- | :--- |
+| Maintenance Code | Correction de bugs et nettoyage du code du terminal | 1.0 | Terminé |
+| Ajustement Épreuve | Mise à jour de la dernière épreuve pour coller au design initial | 1.0 | Terminé |
+
+Difficultes et Solutions
+- Probleme : Manque de temps pour avancer en profondeur sur le projet à cause des révisions et des examens (DST).
+- Solution : Focalisation sur des tâches rapides et ciblées (corrections de bugs et ajustements logiques) pour ne pas prendre de retard global.
+
+Objectifs S+1 (Semaine 6)
+- Travailler sur le décor et l'intégration physique de l'Escape Game : ranger les composants proprement dans une boîte pour que ce soit plus beau et beaucoup plus simple à transporter (très important).
+- Continuer les tests et les finitions sur les épreuves avec l'équipe.

@@ -108,3 +108,31 @@ Jeudi 29/10, on s'est retrouvés en présentiel et on a fait les branchements : 
 - Tester avec les vrais boutons de la baie et étiqueter les boutons
 - Régler le volume du buzzer dans la salle
 - Préparer les vidéos de prévention et la vidéo d'introduction
+
+## Semaine 5 (du 02/11 au 08/11/2026)
+
+**Focus de la semaine :** Semaine de DST : relecture et tests du travail de l'équipe (coffre d'urgence)
+**Temps total travaillé :** 1h15
+
+### Synthèse
+Cette semaine c'était les DST, donc on a peu travaillé sur le projet. Jeudi 05/11, Ethan (qui a le matériel) a ajouté l'application « Coffre d'urgence » : on entre le code du superviseur, le servo ouvre le coffre, puis le site détecte la clé USB branchée au PC et on glisse le fichier urgence.sh dedans pour continuer vers l'épreuve du code à trous. De mon côté j'ai relu ses changements et j'ai relancé tous les tests (règles du jeu, épreuves, partie complète) : tout passe
+J'ai aussi vu que le port du broker MQTT est passé de 1883 à 1884 côté site, mais pas dans le programme de la carte ni dans les tests
+
+### Détail des activités
+
+| Catégorie | Description de la tâche | Temps (h) | Statut |
+| :--- | :--- | :--- | :--- |
+| Code | Relecture des changements d'Ethan (coffre d'urgence, détection de la clé USB, servo commandé par MQTT) | 45min | Terminé |
+| Tests | Lancement des tests sur la nouvelle version : règles du jeu, épreuves et partie complète | 15min | Terminé |
+| IoT | Repérage du décalage de port MQTT (1884 côté site, 1883 côté carte et tests) | 15min | En cours |
+
+### Difficultés et solutions
+**Problème :** le broker écoute maintenant sur le port 1884, mais la carte et les tests utilisent 1883 par défaut, donc la carte ne se connecte plus au site si on ne change rien
+**Solution :** ajouter la ligne `#define MQTT_SERVER_PORT 1884` dans mon fichier secrets.h, et se mettre d'accord avec Ethan pour harmoniser le port partout
+
+### Objectifs S+1
+- Récupérer les changements d'Ethan (git pull) et tester le coffre avec le vrai servo et une vraie clé USB
+- Se mettre d'accord avec Ethan sur le port MQTT (1883 ou 1884)
+- Étiqueter les boutons de la baie et régler le volume du buzzer dans la salle
+- Faire le point avec Jean-François sur le backend NestJS pour décider de la stack (le site actuel est en PHP)
+- Préparer les vidéos de prévention et la vidéo d'introduction

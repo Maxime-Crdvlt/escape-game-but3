@@ -53,7 +53,7 @@ Objectifs S+1 (Semaine 3)
 Focus de la semaine : Avancée du terminal HTML, mise en place du MQTT, PlatformIO et test de la LED sur commande
 Temps total travaillé : 6h
 
-Synthese
+
 Cette semaine, j'ai bien avancé sur le code du terminal au format HTML. J'ai aussi pris en charge les composants chez moi cet semaine , ce qui m'a permis de faire un test concret : j'ai réussi à faire réagir une LED en fonction d'une commande passée dans le terminal (pour la dernière épreuve). Pour y arriver, j'ai installé le broker MQTT et PlatformIO sur VS Code, et j'ai réussi à faire la liaison entre tout ça. Enfin, on a calé avec mes camarades les sessions de travail en présentiel pour la semaine du 26 au 31 octobre afin d'enchaîner sur les différentes épreuves ensemble. j’ai repassé les composant à tanim pour qu’il continu ses test de son coter la semaine qui suit 
 
 Detail des activites
@@ -79,7 +79,7 @@ Objectifs S+1 (Semaine 4 / du 26 au 31/10/2026)
 Focus de la semaine : Retrouvaille en présentiel, branchements, amélioration du terminal et avancement des épreuves
 Temps total travaillé : 4h
 
-Synthese
+
 Cette semaine, on s'est retrouvé jeudi pour travailler ensemble en présentiel. On a fait plusieurs branchements matériels et apporté d'autres améliorations. Le code du terminal a bien progressé, et on a implémenté l'A2F (double authentification) en version PC en attendant d'avoir un vrai téléphone portable. De plus, deux épreuves ont bien avancé : celle du réseau avec les boutons et celle du code à trou. La semaine prochaine sera plus calme niveau projet car c'est la semaine des DST, donc on va juste améliorer quelques petits détails.
 
 Detail des activites
@@ -102,7 +102,7 @@ Objectifs S+1 (Semaine 5)
 Focus de la semaine : Semaine de DST, correction de bugs et mise à jour de la dernière épreuve
 Temps total travaillé : 2h
 
-Synthese
+
 Cette semaine, avec les DST, je n'ai pas trop pu travailler sur le projet. J'ai quand même pris le temps de nettoyer quelques bugs dans le code et de mettre à jour la dernière épreuve pour qu'elle corresponde mieux à ce qu'on avait prévu au départ. 
 
 Detail des activites

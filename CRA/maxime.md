@@ -4,6 +4,75 @@
 
 ---
 
+## Semaine 5 (du 02/11 au 08/11/2026)
+
+**Focus de la semaine :**
+**Temps total travaillé :**
+
+### 📝 Synthèse
+
+### ⚙️ Détail des activités
+
+| Catégorie | Description de la tâche / Lien ticket | Temps (h) | Statut |
+| --------- | ------------------------------------- | --------- | ------ |
+|           |                                       |           |        |
+|           |                                       |           |        |
+
+### ⚠️ Difficultés et Solutions
+
+- **Problème :**
+- **Solution :**
+
+### 🎯 Objectifs S+1
+
+---
+
+## Semaine 4 (du 26/10 au 01/11/2026)
+
+**Focus de la semaine :**
+**Temps total travaillé :**
+
+### 📝 Synthèse
+
+### ⚙️ Détail des activités
+
+| Catégorie | Description de la tâche / Lien ticket | Temps (h) | Statut |
+| --------- | ------------------------------------- | --------- | ------ |
+|           |                                       |           |        |
+|           |                                       |           |        |
+
+### ⚠️ Difficultés et Solutions
+
+- **Problème :**
+- **Solution :**
+
+### 🎯 Objectifs S+1
+
+---
+
+## Semaine 3 (du 19/10 au 25/10/2026)
+
+**Focus de la semaine :**
+**Temps total travaillé :**
+
+### 📝 Synthèse
+
+### ⚙️ Détail des activités
+
+| Catégorie | Description de la tâche / Lien ticket | Temps (h) | Statut |
+| --------- | ------------------------------------- | --------- | ------ |
+|           |                                       |           |        |
+|           |                                       |           |        |
+
+### ⚠️ Difficultés et Solutions
+
+- **Problème :**
+- **Solution :**
+
+### 🎯 Objectifs S+1
+
+---
+
 ## Semaine 2 (du 12/10 au 18/10/2026)
 
 **Focus de la semaine :** Expérimentations et premiers tests  

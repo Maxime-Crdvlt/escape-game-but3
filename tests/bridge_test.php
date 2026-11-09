@@ -20,11 +20,18 @@ function check(string $name, bool $ok, string $detail = ''): void {
 }
 /** Attend (jusqu'à $sec s) qu'un message corresponde à $topic / $payload. */
 function attendre(MqttLite $c, string $topic, string $payload, float $sec = 6.0): bool {
+    static $recus = [];
     $t0 = microtime(true);
-    while (microtime(true) - $t0 < $sec) {
-        foreach ($c->poll(150) as $m) if ($m['topic'] === $topic && $m['payload'] === $payload) return true;
+    while (true) {
+        foreach ($recus as $i => $m) {
+            if ($m['topic'] === $topic && $m['payload'] === $payload) {
+                unset($recus[$i]);
+                return true;
+            }
+        }
+        if (microtime(true) - $t0 >= $sec) return false;
+        foreach ($c->poll(150) as $m) $recus[] = $m;
     }
-    return false;
 }
 
 echo "Test du pont sur $host:$port\n";
@@ -61,6 +68,9 @@ check('la partie est en victoire dans la base', game_phase() === 'victoire', gam
 check('la carte est notée en ligne', state_get('carte') === 'en-ligne', (string) state_get('carte'));
 $types = array_column(events_last(50), 'type');
 check('les appuis sont dans le journal', in_array('bouton', $types, true) && in_array('victoire', $types, true) && in_array('carte', $types, true), implode(',', $types));
+// Le pont écrit son battement à la fin de chaque tour de boucle : on lui laisse jusqu'à 3 s.
+$t0 = microtime(true);
+while (abs((int) state_get('pont', '0') - time()) > 3 && microtime(true) - $t0 < 3) usleep(100000);
 check('le pont écrit son battement de coeur', abs((int) state_get('pont', '0') - time()) <= 3, 'pont=' . state_get('pont') . ' heure=' . time());
 
 // nouvelle partie avec le bouton démarrage

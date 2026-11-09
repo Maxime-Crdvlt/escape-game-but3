@@ -1,0 +1,22 @@
+name: Tests
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: pdo_sqlite, mbstring
+      - name: Installer et lancer Mosquitto
+        run: |
+          sudo apt-get update && sudo apt-get install -y mosquitto
+          printf 'listener 1883 127.0.0.1\nallow_anonymous true\n' > /tmp/mosquitto-ci.conf
+          mosquitto -c /tmp/mosquitto-ci.conf -d
+      - name: Lancer les tests
+        run: php tests/run_all.php

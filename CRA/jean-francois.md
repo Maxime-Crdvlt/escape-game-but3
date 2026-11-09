@@ -133,3 +133,32 @@ Je n'avais pas suivi le travail de l'équipe : mon backend NestJS faisait double
 - Faire relire et fusionner la PR #1 par Tanim.
 - Aligner le port MQTT avec Tanim et le documenter.
 - Mettre à jour le README racine et la feuille de route, créer les tickets du sprint 1.
+
+
+## Semaine 5 (du 02/11 au 08/11/2026)
+
+**Focus de la semaine :** Analyse de l'écart avec l'équipe et mise en place de l'organisation agile du projet
+**Temps total travaillé :** 1 h
+
+### Synthèse
+
+Cette semaine a été fortement réduite par les DST. Nous n'avons pas pus encore traiter le port MQTT et la CI.J'ai mis en place un tableau GitHub Projects pour organiser le travail des prochaines semaines.
+
+### Détail des activités
+
+| Catégorie | Description de la tâche / Lien ticket | Temps (h) | Statut |
+| :--- | :--- | :--- | :--- |
+| Organisation | Création du tableau GitHub Projects « SAÉ S5.01 » (colonnes, vues, champ Sprint) (08/11) | 0.5 | Terminé |
+| Cadrage | Rédaction d'une feuille de route du projet, de l'architecture jusqu'à la soutenance (08/11) | 0.5 | Terminé |
+
+### Difficultés et solutions
+
+**Problème :** Les DST ont limité le temps de travail commun.
+**Solution :** Le rattrapage est prévu en semaine 6 (tickets du Sprint 1 : lancer le jeu en local, relire la PR #1, aligner le port MQTT).
+
+### Objectifs S+1 (Semaine 6)
+
+- Terminer les tickets du Sprint 1 : lancer le jeu en local, relire et fusionner la PR #1 (CI), choisir le port MQTT unique.
+- Mettre à jour le README racine (rôles réels, stack, lancement du jeu).
+- Valider la feuille de route avec l'équipe et se répartir les tickets.
+- Participer à la partie complète sur la vraie carte en présentiel.

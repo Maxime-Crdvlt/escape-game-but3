@@ -1,3 +1,5 @@
+> **Branche non intégrée au projet.** Le backend réel de l'équipe est en PHP (dossier `site/`, avec SQLite et le pont MQTT `site/bin/bridge.php`). Cette branche NestJS a été un essai (connexion à Mosquitto) ; elle est conservée comme trace de travail et ne doit pas être fusionnée dans `main`.
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>

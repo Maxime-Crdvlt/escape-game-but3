@@ -96,3 +96,40 @@ Cette semaine, j'ai participé à la séance de SAÉ en équipe consacrée au te
 - Voir avec l'équipe où le backend s'intègre dans le terminal et le code de la carte déjà présents sur `main`.
 - Réparer les tests Jest du backend.
 - Participer aux séances en présentiel pour tester la liaison entre le code et le matériel.
+
+## Semaine 4 (du 26/10 au 01/11/2026)
+
+**Focus de la semaine :** Séance en présentiel, connexion NestJS–Mosquitto, puis rattrapage de l'intégration au projet réel
+**Temps total travaillé :** 4h
+
+### Synthèse
+
+J'étais présent à la séance de SAÉ en présentiel du 29/10. Le 31/10, j'ai terminé la connexion du backend NestJS au broker Mosquitto (commit `daf85f6`, branche `backend-init`).
+
+Je n'avais pas suivi le travail de l'équipe : mon backend NestJS faisait double emploi avec le backend PHP déjà présent sur `main`. J'ai donc rattrapé mon retard en récupérant le projet, en l'installant sur mon PC et en le testant.
+
+### Détail des activités
+
+| Catégorie | Description de la tâche / Lien ticket | Temps (h) | Statut |
+| :--- | :--- | :--- | :--- |
+| Présentiel | Séance de SAÉ du 29/10 : | 2.0 | Terminé |
+| Backend | Service MQTT dans NestJS (connexion, abonnement à `lerna/#`), commit `daf85f6`, réalisé le 31/10 | - | Terminé |
+|  | Récupération du dépôt (`git pull`), installation de PHP 8.5 (extensions pdo_sqlite, mbstring), lancement de `php tests/run_all.php` | - | Terminé |
+|  | Lancement du jeu (`start.ps1 -Broker`) et partie jouée jusqu'à l'objectif 3/10 (mot de passe, double authentification avec la page téléphone), page Game Master consultée | - | Terminé |
+|  | Relevé de l'écart de port MQTT (1884 dans `mosquitto.conf` et `bridge.php`, 1883 par défaut dans la carte et les tests)| - | Terminé |
+|  | CI GitHub Actions (PHP 8.3, Mosquitto, `php tests/run_all.php`), PR #1. La CI échouait à cause du test du pont : correction de `tests/bridge_test.php` (messages MQTT jetés dans un même paquet, battement de cœur lu trop tôt), 3 essais locaux sans échec, CI verte | - | Terminé, en attente de relecture |
+|  | Avertissement ajouté dans le README de `backend-init` : branche non intégrée, backend réel en PHP, commit `93790852` | 2.0 | Terminé |
+
+### Difficultés et solutions
+
+**Problème 1 :** Mon backend NestJS ne correspondait pas à l'architecture réelle de l'équipe (PHP, SQLite, pont MQTT).
+**Solution :** Je l'abandonne et garde la branche `backend-init` comme trace, avec un avertissement dans son README.
+
+**Problème 2 :** Le test du pont (`tests/bridge_test.php`) échouait de façon intermittente en local, et de façon systématique dans la CI.
+**Solution :** Analyse du code : `attendre()` jetait les messages reçus dans le même paquet et le battement de cœur était lu avant son écriture. Test corrigé et CI verte (PR #1, à faire relire par Tanim).
+
+### Objectifs S+1 (Semaine 5)
+
+- Faire relire et fusionner la PR #1 par Tanim.
+- Aligner le port MQTT avec Tanim et le documenter.
+- Mettre à jour le README racine et la feuille de route, créer les tickets du sprint 1.

@@ -136,3 +136,32 @@ J'ai aussi vu que le port du broker MQTT est passé de 1883 à 1884 côté site,
 - Étiqueter les boutons de la baie et régler le volume du buzzer dans la salle
 - Faire le point avec Jean-François sur le backend NestJS pour décider de la stack (le site actuel est en PHP)
 - Préparer les vidéos de prévention et la vidéo d'introduction
+
+## Semaine 6 (du 09/11 au 15/11/2026)
+
+**Focus de la semaine :** Suivi de l'intégration continue et préparation de la reprise des tests avec le matériel
+**Temps total travaillé :** 1h
+
+### Synthèse
+Cette semaine, Jean-François a mis en place l'intégration continue : à chaque push et à chaque demande de fusion, GitHub lance nos tests sur un serveur où Mosquitto est installé. Son premier essai a échoué parce que notre test du pont perdait des messages quand plusieurs arrivaient en même temps. Il l'a corrigé et le dernier essai est passé (74 vérifications pour les règles du jeu, 70 pour les épreuves, 7 pour le MQTT et 14 pour le pont). La demande de fusion est encore ouverte. Je n'avais pas le matériel cette semaine (Ethan l'a gardé), donc je n'ai pas pu tester le coffre, les boutons de la baie ni le buzzer. J'ai relu son travail pour être prêt à le fusionner, et je récupère le matériel la semaine prochaine pour avancer
+
+### Détail des activités
+
+| Catégorie | Description de la tâche | Temps (h) | Statut |
+| :--- | :--- | :--- | :--- |
+| Tests | Relecture de la CI de Jean-François (fichier tests.yml, lancement des tests avec Mosquitto) et de la correction du test du pont | 30min | Terminé |
+| Tests | Vérification des résultats de la CI : premier essai en échec, dernier essai réussi | 15min | Terminé |
+| Organisation | Mise à jour de mon dépôt et préparation de la récupération du matériel pour la semaine prochaine | 15min | Terminé |
+
+### Difficultés et solutions
+**Problème :** je n'ai pas le matériel, donc je ne peux pas tester le coffre avec le vrai servo et une vraie clé USB, ni les boutons de la baie, et le décalage de port MQTT (1884 côté site, 1883 côté carte et tests) n'est toujours pas réglé
+**Solution :** je récupère le matériel la semaine prochaine pour tout tester ensemble, et on règle le port avec Ethan à ce moment-là
+
+### Objectifs S+1
+- Récupérer le matériel auprès d'Ethan pour avancer sur les tests
+- Tester le coffre avec le vrai servo et une vraie clé USB
+- Tester les boutons de la baie, les étiqueter et régler le volume du buzzer
+- Se mettre d'accord sur le port MQTT (1883 ou 1884)
+- Valider la demande de fusion de l'intégration continue avec Jean-François
+- Faire le point sur le backend NestJS pour décider de la stack
+- Préparer les vidéos de prévention et la vidéo d'introduction

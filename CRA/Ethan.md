@@ -115,7 +115,7 @@ Objectifs S+1 (Semaine 6)
 - Travailler sur le décor et l'intégration physique de l'Escape Game : ranger les composants proprement dans une boîte pour que ce soit plus beau et beaucoup plus simple à transporter (très important).
 - Continuer les tests et les finitions sur les épreuves avec l'équipe.
 
-Semaine 6 (du 09/11 au 15/11/2026)
+## Semaine 6 (du 09/11 au 15/11/2026)
 Temps total travaillé : 4h
 
 Synthese

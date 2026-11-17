@@ -25,9 +25,9 @@ const uint16_t mqtt_port = 1883;
 // --- Branchements (prises de la carte d'extension) ---
 const uint8_t PIN_LED_ROUGE = 2;    // prise D2
 const uint8_t PIN_LED_VERTE = 3;    // prise D3
-const uint8_t PIN_LED_BLEUE = A4;   // prise A4
+const uint8_t PIN_LED_BLEUE = 4;   // prise D4
 const uint8_t PIN_BUZZER    = 5;    // prise D5 (buzzer passif : on joue des notes à la main, voir BUZZER_VOLUME)
-const uint8_t PIN_SERVO     = 4;    // prise D4
+const uint8_t PIN_SERVO     = A4;    // prise A4
 #ifdef BARRE_FILS_INVERSES          // à ajouter dans build_flags si la barre reste éteinte
 const uint8_t PIN_BARRE_CLK = A5, PIN_BARRE_DATA = A6;
 #else

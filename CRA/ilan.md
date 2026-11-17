@@ -117,4 +117,30 @@ Cette semaine, l'équipe s'est retrouvée en présentiel le jeudi 29/10 pour ré
 - Continuer à améliorer quelques petits détails avec l'équipe.
 - Reprendre pleinement l'avancement du projet après les DST.
 
+
+## Semaine 5 (du 02/11 au 08/11/2026)
+
+**Focus de la semaine :** Semaine de DST : suivi de l'avancement de l'équipe  
+**Temps total travaillé :** 30 min
+
+### Synthèse
+
+Cette semaine était consacrée aux DST, et je me suis surtout concentré sur mes révisions. Je n'ai donc pas pu avancer sur le projet. Mes camarades, principalement Ethan, ont tout de même fait progresser le projet. J'ai pris le temps de regarder ce qu'ils avaient réalisé pour rester informé de l'avancement.
+
+### Détail des activités
+
+| Catégorie | Description de la tâche / Lien ticket | Temps | Statut |
+| :--- | :--- | :--- | :--- |
+| Suivi du projet | Prise de connaissance des avancées de l'équipe, principalement celles d'Ethan | 30 min | Terminé |
+
+### Difficultés et solutions
+
+- **Problème :** Manque de temps pour travailler sur le projet à cause des révisions et des DST.
+- **Solution :** Je me suis limité à suivre les avancées de l'équipe, et je reprendrai le travail normalement après les DST.
+
+### Objectifs S+1
+
+- Reprendre ma documentation sur l'aspect écologique du projet.
+- Continuer à suivre l'avancement de l'équipe.
+
 ---

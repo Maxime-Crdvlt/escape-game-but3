@@ -114,3 +114,23 @@ Difficultes et Solutions
 Objectifs S+1 (Semaine 6)
 - Travailler sur le décor et l'intégration physique de l'Escape Game : ranger les composants proprement dans une boîte pour que ce soit plus beau et beaucoup plus simple à transporter (très important).
 - Continuer les tests et les finitions sur les épreuves avec l'équipe.
+
+## Semaine 6 (du 09/11 au 15/11/2026)
+Temps total travaillé : 4h
+
+Synthese
+Cette semaine, j'ai principalement fait du débogage pour corriger les derniers bugs, ainsi que des tests pour m'assurer que tout fonctionne bien. J'ai aussi pris le temps de peaufiner quelques détails et d'améliorer le style et la beauté de l'application pour qu'elle soit plus propre et agréable à utiliser.
+
+Detail des activites
+| Categorie | Description de la tache / Lien ticket | Temps (h) | Statut |
+| :--- | :--- | :--- | :--- |
+| Débogage & Tests | Correction des bugs restants et tests globaux du système | 2.0 | Terminé |
+| UI / Design | Peaufinage de l'interface et amélioration du style visuel de l'application | 2.0 | Terminé |
+
+Difficultes et Solutions
+- Probleme : Petits dysfonctionnements d'affichage et bugs de liaison intermittents lors des tests.
+- Solution : Reprise minutieuse du code CSS/JS et corrections ciblées pour stabiliser l'interface.
+
+Objectifs S+1 (Semaine 7)
+- Poursuivre l'intégration physique des composants dans la boîte de transport.
+- Valider l'ensemble des épreuves avec les membres de l'équipe en présentiel.

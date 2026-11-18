@@ -143,4 +143,31 @@ Cette semaine était consacrée aux DST, et je me suis surtout concentré sur me
 - Reprendre ma documentation sur l'aspect écologique du projet.
 - Continuer à suivre l'avancement de l'équipe.
 
+
+## Semaine 6 (du 09/11 au 15/11/2026)
+
+**Focus de la semaine :** Documentation sur l'aspect écologique et suivi de l'avancement du code  
+**Temps total travaillé :** 2h
+
+### Synthèse
+
+Cette semaine, j'ai repris ma documentation sur l'aspect écologique du projet, comme prévu. J'ai aussi suivi l'avancement de l'équipe sur la partie code : Jean-François a mis en place l'intégration continue, qui lance automatiquement nos tests à chaque push, et Ethan a corrigé les derniers bugs et amélioré l'interface de l'application. J'en ai profité pour me renseigner sur les différents codes du projet afin de mieux comprendre comment les épreuves fonctionnent.
+
+### Détail des activités
+
+| Catégorie | Description de la tâche / Lien ticket | Temps | Statut |
+| :--- | :--- | :--- | :--- |
+| Documentation | Reprise de ma documentation sur l'aspect écologique du projet | 1h | En cours |
+| Suivi du projet | Suivi de l'avancement du code (intégration continue, corrections et interface) et lecture des différents codes du projet | 1h | Terminé |
+
+### Difficultés et solutions
+
+Aucune difficulté particulière à signaler cette semaine.
+
+### Objectifs S+1
+
+- Continuer ma documentation sur l'aspect écologique du projet.
+- Participer à la validation des épreuves avec l'équipe en présentiel.
+- Continuer à suivre l'avancement du code de l'équipe.
+
 ---

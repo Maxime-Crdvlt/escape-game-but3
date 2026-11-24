@@ -133,4 +133,25 @@ Difficultes et Solutions
 
 Objectifs S+1 (Semaine 7)
 - Poursuivre l'intégration physique des composants dans la boîte de transport.
-- Valider l'ensemble des épreuves avec les membres de l'équipe en présentiel.
+- Valider l'ensemble des épreuves avec les membres de l'équipe en présentiel Pour la MVP de la semaine suivante
+
+## Semaine 7 (du 16/11 au 22/11/2026)
+Temps total travaillé : 4h
+
+Synthese
+Cette semaine, on a présenté notre MVP avec Linda Frappat, la prof de droit. Elle a bien aimé notre projet et tout s'est bien passé pendant la présentation de notre début d'escape game. À part ça, on a surtout préparé et ajusté le code pour que tout soit prêt et fluide pour la présentation de la semaine.
+
+Detail des activites
+| Categorie | Description de la tache / Lien ticket | Temps (h) | Statut |
+| :--- | :--- | :--- | :--- |
+| Presentation / MVP | Présentation du début d'escape game (MVP) avec Linda Frappat et retours positifs | 2.0 | Terminé |
+| Preparation Code | Préparation et vérification du code en vue de la présentation de la semaine | 2.0 | Terminé |
+
+Difficultes et Solutions
+- Probleme : S'assurer que le code et les fonctionnalités du MVP soient stables le jour de la présentation.
+- Solution : Vérification en amont et préparation dédiée du code avant la démonstration.
+
+Objectifs S+1 (Semaine 8)
+- Poursuivre l'intégration physique des composants dans la boîte de transport.
+- Continuer le développement des épreuves suivantes et les tests avec l'équipe.
+
